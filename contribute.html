@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+  <title>Contribute - CLD</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/academicons.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+  <!-- add after bootstrap.min.css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
+  />
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!--<a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>-->
+      <a class="navbar-brand js-scroll-trigger" href="index.html">CLD</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ml-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
+          <li class="nav-item"><a class="nav-link" href="contribute.html">Contribute</a></li>
+          <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+          <a class="btn btn-social mx-2" href="https://twitter.com/complegdatabase" target="_blank"><i class="fab fa-twitter" ></i></a>
+          <a class="btn btn-social mx-2" href="https://github.com/saschagobel/legislatoR" target="_blank"><i class="fab fa-github" ></i></a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Header-->
+  <section class="page-section bg-cld" id="header">
+    <div class="container-short">
+      <div class="text-center">
+        <div class="col-lg-12 text-center">
+          <p class="section-heading text-uppercase text-light text-header">Contribute</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section bg-light" id="datacollection">
+    <div class="container text-center text-cld-blue">
+      <div class="row-central" style="margin-bottom: 3rem;">
+        <div class="col-md-4 col-sm-12">
+          <object data="assets/img/collaboration.svg" style="position:relative;margin:auto;height:15em;" > </object>
+        </div>
+        <div class="col-md-8 col-sm-12">
+          <p style = "font-size:3em;text-decoration:underline #cc0065;text-transform:capitalize;font-variant:small-caps;" class="section-heading">Open collaboration</p>
+          <h4>The Comparative Legislators Database (CLD) relies on <span style="color:#cc0065">open collaboration</span>. Our data collection framework depends largely on the contributions of hundreds of Wikipedians.</h4>
+          <h4>We are also looking forward to extend the scope of our database <span style="color:#cc0065">with your help</span>.</h4>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <div class="container">
+      <div class="text-center" id="tab-id">
+        <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xs">How to contribute</p>
+        <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xl">Contribute</p>
+      </div>
+      <div class ="tab">
+
+        <button class="tablink" onclick="openPage('Data', this, '#cc0065')" id="defaultOpen" >Our framework</button>
+        <button class="tablink" onclick="openPage('Getting the files', this, '#cc0065')" >Getting the files</button>
+        <button class="tablink" onclick="openPage('Identifying the entities', this, '#cc0065')">Identifying entities</button>
+        <button class="tablink" onclick="openPage('Collecting the data', this, '#cc0065')">Collecting the data</button>
+      </div>
+
+
+      <div id="Data" class="tabcontent">
+        <nav id="toc" data-toggle="toc"></nav>
+        <body data-spy="scroll" data-target="#toc"></body>
+        <div class="text-dark">
+          <h3>Our data collection framework</h3>
+          <p>The data collection framework for the Comparative Legislators Database (CLD) relies on the open-collaboration platforms <span style="color:#cc0065;">Wikipedia</span> and <span style="color:#cc0065;">Wikidata</span>.</p>
+          <p dir="auto">We divide our data collection into four steps:</p>
+          <ol dir="auto">
+            <li><span class="text-cld-pink">Entity identification</span></li>
+            <li><span class="text-cld-pink">Data collection</span></li>
+            <li><span class="text-cld-pink">Cleaning and verification</span></li>
+            <li><span class="text-cld-pink">Database integration</span></li>
+          </ol>
+          <hr>
+          <br>
+          <div class="text-center hidden-xs">
+            <img src="assets/img/data-collection.png" style="position:relative;height:75%; width:75%">
+          </div>
+          <div class="text-center hidden-xl">
+            <img src="assets/img/data-collection.png" style="position:relative;height:100%; width:100%">
+          </div>
+          <br>
+          <hr>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h4 class="text-cld-pink">1. Entity identification</h4>
+              <p>Our process starts from legislatures' Wikipedia index pages. During the first step of our data collection, we identify and scrape parliamentary members from the index sites to extract the member-specific Wikipedia and Wikidata IDs.
+              </p>
+              <hr>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <h4 class="text-cld-pink">2. Data collection</h4>
+              <p>Once we have extracted the Wikipedia identifiers, we can collect most of the relevant information about the individual legislators from the properties in their Wikidata entry. In some instances, we tackle incomplete data by integrating external data sources.
+              </p>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h4 class="text-cld-pink">3. Cleaning and verification</h4>
+              <p>During the third step, we clean and verify our data. This normally means removing noise in values, harmonizing variables within and across legislatures, and performing checks against alternative data sources.
+              </p>
+              <hr>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <h4 class="text-cld-pink">4. Database integration</h4>
+              <p>The final step of our data collection process entails integrating the newly compiled data with the database interface. We assemble the database around the Wikipedia and Wikidata IDs and provide access via the <code>legislatoR</code> package in R.
+              </p>
+              <hr>
+            </div>
+          </div>
+
+          <div class="col text-center">
+            <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Getting the files', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Get started with the tutorial!</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="Getting the files" class="tabcontent">
+        <h3>Getting the files</h3>
+        <p>The first step in this tutorial will be getting the HTML files of the legislatures' index pages to our machines. We recommend you download the <code>cld-dev</code> folder in your machine to maintain a streamlined workflow and follow this tutorial. Project files in RStudio are self-contained working directories with their own workspace, history and source documents. You can read a bit more about <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects" target="_blank" style="color:#cc0065">Projects in R here</a>. For this tutorials, we assume some familiarity with <code>R</code> programming and the <code>tidyverse</code>.</p>
+        <div class="text-center">
+          <img src="assets/img/contribute/folder-str.png" alt="folder-str" style="position:relative" class="img-cont">
+        </div>
+        <hr>
+        <p>
+          In this tutorial, we will illustrate our process with the Italian Chamber of Deputies, or <i>Camera dei Deputati</i>. This code also lives in the <code>code/italian-chamber</code> folder in our sample R Project. You can just open the <code>cld-web.Rproj</code> file to get your R Session started.<br>
+          Our process starts from legislatures' Wikipedia index pages, for example: the index containing the members elected during the <a href="https://it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_1948" target="_blank" style="color:#cc0065">1948 Chamber elections</a>. From this page, you can also access the indexes of the succesive elections until 2018.
+          Once we have identified the index for our legislature of interest, we can download them locally. The idea of working with the local HTMLs is to ensure reproducibility since the Wikipedia entries can change.<br>
+        </p>
+        <div class="text-center">
+          <img src="assets/img/contribute/wiki-index.png" alt="wiki-index" style="position:relative; margin-bottom:1rem" class="img-cont">
+        </div>
+        <p >As you will see later, a lot of what we will do during our data collection process will rely on finding patterns. At this stage, we would like to look for patterns in the URLs of the index pages to download them. You could also download them one by one, but where is the fun in that, right?<br>
+          In most cases, as it is with the <i>Camera dei Deputati</i> sites, the URL strings are consistent, for example:<br>
+          <ul style="word-wrap: break-word">
+            <li><span style="background-color: #FFFF00">it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_</span><span style="color:#cc0065">1948</span></li>
+            <li><span style="background-color: #FFFF00">it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_</span><span style="color:#cc0065">1953</span></li>
+            <li><span style="background-color: #FFFF00">it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_</span><span style="color:#cc0065">1958</span></li>
+          </ul>
+          Thanks to the conscistency of the URL strings, we can create easily create a vector containing the URLs of all the files we would like to download. This reasoning can be adapted to other legislatures. This is how the code would look like: <br>
+          <span style="color:#cc0065">(P.S. don't worry, we will break it down line by line).</span>
+        </p>
+        <pre><code>source("code/packages.R")
+source("code/functions.R")
+
+# construct list of urls
+## chamber of deputies
+
+leg_ses <- c("1948", "1953", "1958", "1963", "1968", "1972", "1976",
+"1979", "1983", "1987", "1992", "1994", "1996", "2001",
+"2006", "2008", "2013", "2018") # 1st to 18th sessions
+
+url_list <- glue::glue("https://it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_{leg_ses}")
+
+file_names <- glue::glue("{leg_ses}_chamber_session_ITA.html")
+
+# download pages
+folder <- "data/italy-chamber/html/"
+dir.create(folder)
+for (i in 1:length(url_list)) {
+  if (!file.exists(paste0(folder, file_names[i]))) {
+    download.file(url_list[i], destfile = paste0(folder, file_names[i])) # , method = "libcurl" might be needed on windows machine
+    Sys.sleep(runif(1, 0, 1))
+  }
+}
+        </code></pre>
+        <div class="col text-center">
+          <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Identifying the entities', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Let's move to the next step!</button>
+        </div>
+        <hr>
+
+      </div>
+
+      <div id="Identifying the entities" class="tabcontent">
+        <h3>Identifying the entities</h3>
+        <p>Once we have downloaded the Wikipedia pages, we want to inspect our files to assemble our entity collection protocol. In this stage, things will revolve around our <b><i>collector function</i></b>. Our aim is to generate a nested list comprising all the information that the index page provides for each legislator.</p>
+        <div class="text-center">
+          <img src="assets/img/contribute/list.png" alt="list" style="position:relative; margin-bottom:1rem" class="img-cont-large">
+        </div>
+        <hr>
+        <h3>Exploring our HTMLs</h3>
+        <p>Let's take a look at the <a href="https://it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_1948" target="_blank" style="color:#cc0065">1948 Chamber elections</a> index page below. As we can see, there are three data points that we are interested in: <i>Collegio</i> (constituency), <i>Lista</i> (party), and <i>Elleto</i> (name of the legislator). If we scroll through the page, we can also notice that all the information is contained within a single table.</p>
+        <div class="text-center">
+          <img src="assets/img/contribute/wiki-entity-3.gif" alt="entity-gif" style="position:relative; margin-bottom:1rem" class="img-cont-wide">
+        </div>
+        <p>We will work with the <code>rvest</code> package to load our html files into <code>R</code>. This is how the same site looks in our <code>R</code> environment.<br>
+          <pre><code class="r">parsed_html &lt;- rvest::read_html("data/italy_chamber/html/1948_chamber_session_ITA.html")
+parsed_html
+
+## {html_document}
+## &lt;html class="client-nojs" lang="it" dir="ltr"&gt;
+## [1] &lt;head&gt;\n&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;\n&lt;meta charset="UTF-8"&gt;\n&lt;title&gt;Eletti alla Camera dei deputati nelle elepolitiche italia ...
+## [2] &lt;body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_1948 rootpa ...</code></pre>
+        </p>
+
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+          <strong>We will introduce you to one way of getting to the expected output.</strong> As it is often the case with programming, there is no singular right way. We would also be happy to hear from you if you find an alternative, more efficient, way to introduce in the tutorials.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <hr>
+        <h3>Getting familiar with our XPaths</h3>
+        <p>We can inspect the structure of our html files through our browser. Let's take the first legislator as an example. We can right click on the name and select <i>Inspect</i>. The code to render the page will appear on a panel in our browser with the attribute specific to the name we clicked on opened by default. In this case, it would be:<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<code><span style="color: #007700">&lt;a</span> <span style="color: #000077">href=</span><span style="background-color: #e0e0ff">&quot;/wiki/Attilio_Piccioni&quot;</span> <span style="color: #000077">title=</span><span style="background-color: #e0e0ff">&quot;Attilio Piccioni&quot;</span><span style="color: #007700">&gt;</span>Attilio Piccioni<span style="color: #007700">&lt;/a&gt;</span>
+          </code> <br>
+          As we can see, this <code>&lt;a&gt;</code> tag contains some data we are interested in. That is, the <span style="color: #000077">href</span> attribute holds the path to the legislator's Wikipedia page and the <span style="color: #000077">title</span> attribute the name of the legislator.</p>
+          <div class="text-center">
+            <img src="assets/img/contribute/full-xpath.gif" alt="full-xpath" style="position:relative; margin-bottom:1rem" class="img-cont">
+          </div>
+          <p>If we further right-clicked on it, then copy + Copy XPath, we would get some extra information that would help us in the parsing of the information.<br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b style="color:#cc0065">The output XPath to Attilio Piccioni would be:</b><code style="color: #000077"> //*[@id="mw-content-text"]/div[1]/table[2]/tbody/tr[2]/td[3]/a</code><br>
+            Though criptic initially, this bit of text will serve two purposes: a) as a blueprint to help us understand the underlying structure of the file and b) as a selector to aid us in gathering the attributes we require for our database.<br>
+            To understand the <b>structure</b>, we can work backwards from <code style="color: #000077"> //*[@id="mw-content-text"]/<span style="background-color:#ff2e4c">div[1]</span>/<span style="background-color:#00ffd9">table[2]</span>/tbody/<span style="background-color: #10ff00">tr[2]</span>/<span style="background-color: #FFFF00">td[3]</span>/a</code>. For example, we will now know that the <code>&lt;a&gt;</code> tag with Attilio Piccioni's information is located in the section where <code style="color: #000077">id="mw-content-text"</code> (as is the case with the content of most Wikipedia entries). This also tells us that the tag is the <span style="background-color: #FFFF00">third cell</span> of the <span style="background-color: #10ff00">second row</span> of the <span style="background-color:#00ffd9">second table</span> of the <span style="background-color:#ff2e4c">first section</span>.
+          </p>
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>XPath is a query language for selecting nodes from a Markup Language document (such as XML and HTML).</strong> Learning a bit more about it can bring us a long way when faced with more complex index pages. A good place to start is <a href="https://www.w3schools.com/xml/xpath_intro.asp" target="_blank" style="color:#cc0065">this tutorial</a>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div><hr>
+          <h3>Selecting with XPaths in R</h3>
+          <p>In a previous step, we created the <code>parsed_html</code> object, which contained our index page as an <code>{html_document}</code> in <code>R</code>. Now, we will learn how we can leverage this object to extract our data. To work with our HTML documents, we will employ a couple of functions from the <code>rvest</code> package. Previously, we used <code class="r">rvest::read_html()</code>, which as the name suggest helps us load HTML files in out environment. At this stage, we will introduce the <code>rvest::html_nodes()</code> function, which extracts nodes from an HTML document based on some selector argument.</p>
+          <b style="color:#cc0065">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThis is how our code looked:</b>
+          <pre><code class="r">parsed_html &lt;- rvest::read_html("data/italy_chamber/html/1948_chamber_session_ITA.html")
+parsed_html
+
+## {html_document}
+## &lt;html class="client-nojs" lang="it" dir="ltr"&gt;
+## [1] &lt;head&gt;\n&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;\n&lt;meta charset="UTF-8"&gt;\n&lt;title&gt;Eletti alla Camera dei deputati nelle elepolitiche italia ...
+## [2] &lt;body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_1948 rootpa ...</code></pre>
+          <p>We can use <code>rvest::html_nodes()</code> to extract Attilio Piccioni's information by feeding the XPath into the functions <code>xpath</code> argument, for example:</p>
+          <pre><code class="r">piccioni &lt;- parsed_html %>% rvest::html_nodes(xpath = "//*[@id='mw-content-text']/div[1]/table[2]/tbody/tr[2]/td[3]/a")
+piccioni
+
+## {xml_nodeset (1)}
+## [1] &lt;a href="/wiki/Attilio_Piccioni" title="Attilio Piccioni"&gt;Attilio Piccioni&lt;/a&gt;</code></pre>
+          <p>We can also get all <code>&lt;a&gt;</code> sections in the table by deleting the specific row and cell markers from the XPath, for example:</p>
+          <pre><code class="r">node &lt;- parsed_html %>% rvest::html_nodes(xpath = "//*[@id='mw-content-text']/div[1]/table[2]/tbody/tr/td/a")
+node
+
+## {xml_nodeset (772)}
+## [1] &lt;a href="/wiki/Collegio_unico" title="Collegio unico"&gt;Collegio Unico Nazionale&lt;/a&gt;
+## [2] &lt;a href="/wiki/Democrazia_Cristiana" title="Democrazia Cristiana"&gt;Democrazia Cristiana&lt;/a&gt;
+## [3] &lt;a href="/wiki/Attilio_Piccioni" title="Attilio Piccioni"&gt;Attilio Piccioni&lt;/a&gt;
+## [4] &lt;a href="/wiki/Maria_De_Unterrichter_Jervolino" title="Maria De Unterrichter Jervolino"&gt;Maria De Unterrichter Jervolino&lt;/a&gt;
+## [5] &lt;a href="/wiki/Giuseppe_Fuschini" title="Giuseppe Fuschini"&gt;Giuseppe Fuschini&lt;/a&gt;
+## [6] &lt;a href="/wiki/Edoardo_Martino" title="Edoardo Martino"&gt;Edoardo Martino&lt;/a&gt;
+## [7] &lt;a href="/wiki/Fronte_Democratico_Popolare" title="Fronte Democratico Popolare"&gt;Fronte Democratico Popolare&lt;/a&gt;
+## [8] &lt;a href="/wiki/Virgilio_Nasi" title="Virgilio Nasi"&gt;Virgilio Nasi&lt;/a&gt;
+## ...</code></pre>
+          <p>We can further tabulate the attributes of the <code>node</code> object into a workable dataframe, as such:</p>
+          <pre><code class="r">list_table <- tibble::tibble(
+                 url = node %>% rvest::html_attr("href"),
+                 name = node %>% rvest::html_text()
+              )
+list_table
+
+## # A tibble: 772 × 2
+## url                                       name
+## &lt;chr&gt;                                     &lt;chr&gt;
+## 1 /wiki/Collegio_unico                    Collegio Unico Nazionale
+## 2 /wiki/Democrazia_Cristiana              Democrazia Cristiana
+## 3 /wiki/Attilio_Piccioni                  Attilio Piccioni
+## 4 /wiki/Maria_De_Unterrichter_Jervolino   Maria De Unterrichter Jervolino
+## 5 /wiki/Giuseppe_Fuschini                 Giuseppe Fuschini
+## 6 /wiki/Edoardo_Martino                   Edoardo Martino
+## 7 /wiki/Fronte_Democratico_Popolare       Fronte Democratico Popolare
+## 8 /wiki/Virgilio_Nasi                     Virgilio Nasi
+## 9 /wiki/Rosa_Fazio                        Rosa Fazio
+## 10 /wiki/Antonio_Giolitti                 Antonio Giolitti
+## # … with 762 more rows</code></pre>
+
+          <p>Our new dataframe <code>list_table</code> contains the URLs and text attributes from each <code>&lt;a&gt;</code> node in the table. As you can see, in the previous code chunk, we introduced two additional functions: first) <code>rvest::html_attr()</code> to get specific attributes from a node and second) <code>rvest::html_text()</code> to get the text attached to a node. As you may infer, we could have also extracted the <code>name</code> by getting the title attribute, as such:
+            <pre><code class="r">tibble::tibble(
+    url = node %>% rvest::html_attr("href"),
+    name = node %>% rvest::html_attr("title")
+)
+
+## # A tibble: 772 × 2
+## url                                       name
+## &lt;chr&gt;                                     &lt;chr&gt;
+## 1 /wiki/Collegio_unico                    Collegio Unico Nazionale
+## 2 /wiki/Democrazia_Cristiana              Democrazia Cristiana
+## 3 /wiki/Attilio_Piccioni                  Attilio Piccioni
+## 4 /wiki/Maria_De_Unterrichter_Jervolino   Maria De Unterrichter Jervolino
+## 5 /wiki/Giuseppe_Fuschini                 Giuseppe Fuschini
+## 6 /wiki/Edoardo_Martino                   Edoardo Martino
+## 7 /wiki/Fronte_Democratico_Popolare       Fronte Democratico Popolare
+## 8 /wiki/Virgilio_Nasi                     Virgilio Nasi
+## 9 /wiki/Rosa_Fazio                        Rosa Fazio
+## 10 /wiki/Antonio_Giolitti                 Antonio Giolitti
+## # … with 762 more rows</code></pre></p>
+          <hr>
+          <h3>Getting HTML tables into R</h3>
+          <p>As we have seen, the data we are interested is located in a <code>&lt;table&gt;</code> node of the <code><span style="color: #007700">&lt;div</span> <span style="color: #000077">id=</span><span style="background-color: #e0e0ff">&quot;mw-content-text&quot;</span><span style="color: #007700">&gt;</span></code> section. Fortunately, <code>rvest</code> has a means to easily parse an HTML table into a dataframe, that is: <code>rvest::html_table()</code>.</p>
+<pre><code class="r">parsed_html %>% rvest::html_table()
+
+## [[1]]
+## # A tibble: 1 × 2
+## X1    X2
+## &lt;lgl&gt; &lt;chr&gt;
+##   1 NA    Questa voce  sull'argomento elezioni in Italia è solo un abbozzo.Contribuisci a migliorarla secondo le convenzioni di Wikipedia.
+##
+## [[2]]
+## # A tibble: 570 × 3
+##    Collegio                 Lista                       Eletto
+##    &lt;chr&gt;                    &lt;chr&gt;                       &lt;chr&gt;
+##  1 Collegio Unico Nazionale Democrazia Cristiana        Attilio Piccioni
+##  2 Collegio Unico Nazionale Democrazia Cristiana        Maria De Unterrichter Jervolino
+##  3 Collegio Unico Nazionale Democrazia Cristiana        Giuseppe Fuschini
+##  4 Collegio Unico Nazionale Democrazia Cristiana        Edoardo Martino
+##  5 Collegio Unico Nazionale Fronte Democratico Popolare Virgilio Nasi
+##  6 Collegio Unico Nazionale Fronte Democratico Popolare Rosa Fazio
+##  7 Collegio Unico Nazionale Fronte Democratico Popolare Antonio Giolitti
+##  8 Collegio Unico Nazionale Fronte Democratico Popolare Silvio Paolucci
+##  9 Collegio Unico Nazionale Unità Socialista            Ivan Matteo Lombardo
+## 10 Collegio Unico Nazionale Unità Socialista            Roberto Tremelloni
+## # … with 560 more rows
+##
+## [[3]]
+## # A tibble: 3 × 2
+##   `V · D · M Legislature e parlamentari della Repubblica Italiana` `V · D · M Legislature e parlamentari della Repubblica Italiana`
+##   &lt;chr&gt;                                                            &lt;chr&gt;
+## 1 Legislature                                                      AC (Eletti) · I · II · III · IV · V · VI · VII · VIII · IX · X · XI · XII · XIII · XIV · XV · XVI · XVII · XVI…
+## 2 Deputati                                                         I (Eletti) · II (Eletti) · III (Eletti) · IV (Eletti) · V (Eletti) · VI (Eletti) · VII (Eletti) · VIII (Eletti…
+## 3 Senatori                                                         I (Eletti) · II (Eletti) · III (Eletti) · IV (Eletti) · V (Eletti) · VI (Eletti) · VII (Eletti) · VIII (Eletti…
+##
+## [[4]]
+## # A tibble: 1 × 2
+##   X1               X2
+##   &lt;chr&gt;            &lt;chr&gt;
+## 1 Portale Politica Portale Storia d'Italia
+</code></pre>
+          <p>This code retrieves all tables within our <code>parsed_html</code> object. As we remember from our exploration of the structure from the XPath, we are interested in the second table. We can extract it like this: </p>
+<pre><code class="r">parsed_html %>% rvest::html_table() %>%
+      magrittr::extract2(2) # to extract table 2 from the nested list
+
+## # A tibble: 570 × 3
+##    Collegio                 Lista                       Eletto
+##    &lt;chr&gt;                    &lt;chr&gt;                       &lt;chr&gt;
+##  1 Collegio Unico Nazionale Democrazia Cristiana        Attilio Piccioni
+##  2 Collegio Unico Nazionale Democrazia Cristiana        Maria De Unterrichter Jervolino
+##  3 Collegio Unico Nazionale Democrazia Cristiana        Giuseppe Fuschini
+##  4 Collegio Unico Nazionale Democrazia Cristiana        Edoardo Martino
+##  5 Collegio Unico Nazionale Fronte Democratico Popolare Virgilio Nasi
+##  6 Collegio Unico Nazionale Fronte Democratico Popolare Rosa Fazio
+##  7 Collegio Unico Nazionale Fronte Democratico Popolare Antonio Giolitti
+##  8 Collegio Unico Nazionale Fronte Democratico Popolare Silvio Paolucci
+##  9 Collegio Unico Nazionale Unità Socialista            Ivan Matteo Lombardo
+## 10 Collegio Unico Nazionale Unità Socialista            Roberto Tremelloni
+## # … with 560 more rows
+</code></pre>
+          <p>This already looks a lot like the expected output for the legislature's term. If we think back at the first image in this page, we just miss the URL to each legislator's Wikipedia entry and number of the session. We can do this easily by changing the names of the variables with <code>dplyr::rename()</code>, merging these data with the <code>list_table</code> that contained the URLs, and finally creating a new column with the session name:</p>
+<pre><code class="r">parsed_html %>% rvest::html_table() %>%
+      magrittr::extract2(2) # to extract table 2 from the nested list
+      dplyr::rename("name" = "Eletto", "constituency" = "Collegio", "party" = "Lista") %>% # change names
+      dplyr::left_join(., list_table) %>% # join current df with tibble of &lt;a&gt; nodes by name
+      dplyr::mutate(session = "1")
+
+## Joining, by = "name"
+## # A tibble: 572 × 5
+## constituency                party                       name                            url                                   session
+## &lt;chr&gt;                       &lt;chr&gt;                       &lt;chr&gt;                           &lt;chr&gt;                                 &lt;chr&gt;
+## 1 Collegio Unico Nazionale  Democrazia Cristiana        Attilio Piccioni                /wiki/Attilio_Piccioni                1
+## 2 Collegio Unico Nazionale  Democrazia Cristiana        Maria De Unterrichter Jervolino /wiki/Maria_De_Unterrichter_Jervolino 1
+## 3 Collegio Unico Nazionale  Democrazia Cristiana        Giuseppe Fuschini               /wiki/Giuseppe_Fuschini               1
+## 4 Collegio Unico Nazionale  Democrazia Cristiana        Edoardo Martino                 /wiki/Edoardo_Martino                 1
+## 5 Collegio Unico Nazionale  Fronte Democratico Popolare Virgilio Nasi                   /wiki/Virgilio_Nasi                   1
+## 6 Collegio Unico Nazionale  Fronte Democratico Popolare Rosa Fazio                      /wiki/Rosa_Fazio                      1
+## 7 Collegio Unico Nazionale  Fronte Democratico Popolare Antonio Giolitti                /wiki/Antonio_Giolitti                1
+## 8 Collegio Unico Nazionale  Fronte Democratico Popolare Silvio Paolucci                 /wiki/Silvio_Paolucci_(politico)      1
+## 9 Collegio Unico Nazionale  Unità Socialista            Ivan Matteo Lombardo            /wiki/Ivan_Matteo_Lombardo            1
+## 10 Collegio Unico Nazionale Unità Socialista            Roberto Tremelloni              /wiki/Roberto_Tremelloni              1
+## # … with 562 more rows
+</code></pre>
+          <p style="color:#cc0065">(P.S. we don't need to worry about <code>list_table</code> containing also the information for the constituencies and the parties, since we are joining by name.)</p>
+          <hr>
+          <h3>Building our collector</h3>
+          <p>As we said before, a lot of what we will do relies on finding patterns. Our job from here is to inspect all the index pages and find commonalities. Normally, Wikipedians will maintain a constant format for each legislature. From our experience, only small things change from term to term, such as: the number of the table the information is located in, the headers to introduce the information (e.g. Circoscrizione instead or Collegio), or the number of columns in each table. Still, for the most part you can reuse the code and deal with the exeptions within your collector function.</p>
+          <pre><code class="r">#### ITALY CHAMBER WIKIPEDIA INFORMATION EXTRACTION =============================================
+
+collectorItalyChamber <- function(paths) {
+  # import paths to html files in correct order
+  source <- paths$files
+  # loop through html files
+  for (j in 1:length(source)) {
+    parsed_html <- rvest::read_html(paths$files[j])
+
+    node <- parsed_html %>% rvest::html_nodes(xpath = "//*[@id='mw-content-text']/div[1]/table/tbody/tr/td/a")
+
+    list_table <- tibble::tibble(url = node %>% rvest::html_attr("href"),
+                                 name = node %>% rvest::html_text()
+    )
+
+    if (paths$session[j] %in% c(1,2,3,5)) {
+      parsed_tab <- parsed_html %>% rvest::html_table() %>% magritrr::extract2(2) %>%
+        dplyr::rename("name" = "Eletto") %>%
+        dplyr::left_join(., list_table) %>%
+        dplyr::select(-contains("Note")) %>%
+        dplyr::mutate(session = paths$session[j])
+    } else if (paths$session[j] %in% c(12,13,14)) {
+      parsed_tab <- bind_rows(parsed_html %>% rvest::html_table() %>% magritrr::extract2(1) %>%
+                                dplyr::rename("party" = "Lista", "name" = "Eletto") %>%
+                                dplyr::select("Circoscrizione", "party", "name"),
+                              parsed_html %>% html_table() %>% magritrr::extract2(2) %>%
+                                dplyr::rename("party" = "Partito", "name" = "Eletto") %>%
+                                dplyr::select("Circoscrizione", "party", "name")) %>%
+        dplyr::mutate(Circoscrizione = stringr::str_remove(Circoscrizione, regex("^[A-Z]+ - "))) %>%
+        dplyr::left_join(., list_table) %>%
+        dplyr::mutate(session = paths$session[j])
+    } else if (paths$session[j] == 18) {
+      parsed_tab <- bind_rows(parsed_html %>% rvest::html_table() %>% magritrr::extract2(1) %>%
+                                dplyr::rename("party" = "Lista/Coalizione", "name" = "Eletto") %>%
+                                dplyr::select("Circoscrizione", "party", "name"),
+                              parsed_html %>% html_table() %>% magritrr::extract2(2) %>%
+                                dplyr::rename("party" = "Lista", "name" = "Eletto") %>%
+                                dplyr::select("Circoscrizione", "party", "name"),
+                              parsed_html %>% html_table() %>% magritrr::extract2(4) %>%
+                                dplyr::rename("party" = "Lista", "name" = "Eletto") %>%
+                                dplyr::select("Circoscrizione", "party", "name"),
+                              parsed_html %>% html_table() %>% magritrr::extract2(5) %>%
+                                dplyr::rename("Circoscrizione" = "Ripartizione","party" = "Lista", "name" = "Eletto") %>%
+                                dplyr::select("Circoscrizione", "party", "name")) %>%
+        dplyr::left_join(., list_table) %>%
+        dplyr::mutate(session = paths$session[j])
+    }
+    else if (paths$session[j] %in% c(15,16,17)) {
+      parsed_tab <-  parsed_html %>% rvest::html_table() %>% magritrr::extract2(1) %>%
+        dplyr::mutate(Circoscrizione = stringr::str_remove(Circoscrizione, regex("^[A-Z]+ - "))) %>%
+        dplyr::rename("name" = "Eletto") %>%
+        dplyr::left_join(., list_table)  %>%
+        dplyr::select(-contains("Note")) %>%
+        dplyr::mutate(session = paths$session[j])
+    }
+    else{
+      parsed_tab <-  parsed_html %>% rvest::html_table() %>% magritrr::extract2(1) %>%
+        dplyr::rename("name" = "Eletto") %>%
+        dplyr::left_join(., list_table)  %>%
+        dplyr::select(-contains("Note")) %>%
+        dplyr::mutate(session = paths$session[j])
+    }
+
+    # collect overall output
+    if (j == 1) {
+      output <- list(parsed_tab)
+    } else {
+      output <- c(output,
+                  list(parsed_tab))
+    }
+  }
+  return(output)
+}
+  </pre></code>
+          <hr>
+          <div class="col text-center">
+            <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Collecting the data', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Let's get the data!</button>
+          </div>
+
+        </div>
+
+        <div id="Collecting the data" class="tabcontent">
+          <h3>Collecting the data</h3>
+          <p>Once we have created our <i>collector function</i>, we have to follow a series of steps to gather all our data. Things from here will be straightforward. We just need to create a data frame containing the names of the files, the legislative session, and the years. After that, it will be an exercise of replacing strings to match the new legislature.In this tutorial, we will follow-through with the <i>Camera dei Deputati</i>. Still, to make things easier, you can use the <code>code/02-collection-sample</code> script that has clear instructions on which strings to replace to collect the data.
+          </p>
+          <hr>
+          <h3>Using the <code>collectorItalyChamber()</code> function</h3>
+          <p>In the previous step, we built our <i>collector function</i>. We leveraged the patterns in the different legislative index pages to create the instructions to parse the entities. Our code will iterate across pages with a similar structure based on the legislative session. <br>
+          In this step, we will show you how we built our <code>collectorItalyChamber()</code> function to gather the expected output for all the 18 legislative terms of the <i>Camera dei Deputati</i></p>
+
+        </div>
+      </section>
+
+
+
+
+      <!-- Footer-->
+      <footer class="footer py-4">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">Copyright &copy; CLD 2021</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+              <a class="btn btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-social mx-2" href="#!"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+              <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Bootstrap core JS-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="js/scripts.js"></script>
+      <script src="js/clipboard.min.js"></script>
+      <
+      <script>
+      function openPageButton(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        document.getElementById("tab-id").scrollIntoView();
+        elmnt.style.backgroundColor = color;
+      }
+
+      function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+      </script>
+      <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+      <!-- * *                               SB Forms JS                               * *-->
+      <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+      <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+      <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+    </html>
+    <!-- Bootstrap core JS
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+  </html>-->

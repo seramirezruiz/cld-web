@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+  <title>Data - CLD</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/academicons.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+  <!-- add after bootstrap.min.css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
+  />
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <!--<a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>-->
+      <a class="navbar-brand js-scroll-trigger" href="index.html">CLD</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars ml-1"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
+          <li class="nav-item"><a class="nav-link" href="contribute.html">Contribute</a></li>
+          <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+          <a class="btn btn-social mx-2" href="https://twitter.com/complegdatabase" target="_blank"><i class="fab fa-twitter" ></i></a>
+          <a class="btn btn-social mx-2" href="https://github.com/saschagobel/legislatoR" target="_blank"><i class="fab fa-github" ></i></a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header-->
+  <section class="page-section bg-light" id="header">
+    <div class="container-short">
+      <div class="text-center">
+        <div class="col-lg-12 text-center">
+          <p style = "font-size:7em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue">Data</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section-content bg-cld" id="legexp">
+    <div class="container text-center text-light">
+      <div class="row-central">
+        <div class="col-sm-4">
+          <object data="assets/img/sticker2.svg" style="position:relative;margin:auto;height:15em;" > </object>
+        </div>
+        <div class="col-sm-8">
+          <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-lights">LegislatoR package</p>
+          <h4>The Comparative Legislators Database (CLD) includes political, sociodemographic, career, online presence, public attention, and visual information for over 45,000 contemporary and historical politicians from 14 countries and the European Parliament. </h4>
+          <p>The CLD comes along the legislatoR package for the software environment R that facilitates access to the contents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Header-->
+  <section class="page-section bg-light" id="header">
+    <div class="container">
+      <div class="text-center">
+        <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xs">The database</p>
+        <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xl">Database</p>
+      </div>
+      <div class ="tab">
+
+        <button class="tablink" onclick="openPage('Data', this, '#cc0065')" id="defaultOpen" >Data</button>
+        <button class="tablink" onclick="openPage('Structure', this, '#cc0065')" >Structure</button>
+        <button class="tablink" onclick="openPage('LegislatoR', this, '#cc0065')">LegislatoR</button>
+        <button class="tablink" onclick="openPage('Tutorial', this, '#cc0065')">Tutorial</button>
+      </div>
+
+
+      <div id="Data" class="tabcontent">
+        <nav id="toc" data-toggle="toc"></nav>
+        <body data-spy="scroll" data-target="#toc"></body>
+        <div class="text-dark">
+          <h3>Data</h3>
+          <p>The Comparative Legislators Database (CLD) is a one-stop shop for rich, diverse and integrated individual-level data on national political representatives. The database contains information for over 45,000 contemporary and historical legislators from 14 countries and the European Parliament. In our project, we unite collaborative micra-data collection efforts. We bring these together through the use of Wikipedia and Wikidata. </p>
+
+
+
+          <p>Below you will find an overview of our current coverage and other databases that the CLD can be integrated with:</p>
+
+          <table class="legislator-table table-hover"> <thead>
+            <tr>
+              <th>Country</th>
+              <th>Legislative sessions</th>
+              <th>Politicians (unique)</th>
+              <th>Integrated with</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Austria (Nationalrat)</td>
+              <td>all 27<br> (1920-2019)</td>
+              <td>1,923</td>
+              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/L4OAKN" rel="nofollow">ParlSpeech V2</a> (Rauh/Schwalbach 2020)</td>
+            </tr>
+            <tr>
+              <td>Canada (House of Commons)</td>
+              <td>all 43<br> (1867-2019)</td>
+              <td>4,515</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Czech Republic (Poslanecka Snemovna)</td>
+              <td>all 8<br> (1992-2017)</td>
+              <td>1,020</td>
+              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017)</td>
+            </tr>
+            <tr>
+              <td>France (Assemblée)</td>
+              <td>all 15<br> (1958-2017)</td>
+              <td>3,933</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Germany (Bundestag)</td>
+              <td>all 19<br> (1949-2017)</td>
+              <td>4,075</td>
+              <td><a href="https://dataverse.harvard.edu/dataverse/btvote" rel="nofollow">BTVote data</a> (Bergmann et al. 2018),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EBEDPI" rel="nofollow">Reelection Prospects data</a> (Stoffel/Sieberer 2017)</td>
+            </tr>
+            <tr>
+              <td>Ireland (Dail)</td>
+              <td>all 33<br> (1918-2020)</td>
+              <td>1,408</td>
+              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6MZN76" rel="nofollow">Database of Parliamentary Speeches in Ireland</a> (Herzog/Mikhaylov 2017)</td>
+            </tr>
+            <tr>
+              <td>Scotland (Parliament)</td>
+              <td>all 5<br> (1999-2016)</td>
+              <td>305</td>
+              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EQ9WBE" rel="nofollow">ParlScot</a> (Braby/Fraser 2021)</td>
+            </tr>
+            <tr>
+              <td>Spain (Congreso de los Diputados)</td>
+              <td>all 14<br> (1979-2019)</td>
+              <td>2634</td>
+              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/L4OAKN" rel="nofollow">ParlSpeech V2</a> (Rauh/Schwalbach 2020)</td>
+            </tr>
+            <tr>
+              <td>United Kingdom (House of Commons)</td>
+              <td>all 58<br> (1801-2019)</td>
+              <td>13,215</td>
+              <td><a href="https://github.com/ArthurSpirling/EggersSpirlingDatabase">EggersSpirling data</a> (starting from <br> 38th session, Eggers/Spirling 2014),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017)</td>
+            </tr>
+            <tr>
+              <td>United States (House and Senate)</td>
+              <td>all 116<br> (1789-2019)</td>
+              <td>12,512</td>
+              <td><a href="https://voteview.com/data" rel="nofollow">Voteview data</a> (Lewis et al. 2019), <br> <a href="http://www.congressionalbills.org/" rel="nofollow">Congressional Bills Project data</a> (Adler/Wilkserson 2018)</td>
+            </tr>
+            <tr>
+              <td><strong>10</strong></td>
+              <td><strong>338</strong></td>
+              <td><strong>45,540</strong></td>
+              <td><strong>12</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+    <div id="Structure" class="tabcontent">
+      <h3>Structure</h3>
+      <p>The CLD comes as a relational database. This means that all tables can be joined with the Core table via one of two keys - the <span style = "color:#cc0065">Wikipedia page ID</span> or the <span style = "color:#cc0065">Wikidata ID</span>. These keys uniquely identify individual politicians. The figure below illustrates this structure and the CLD's content.</p>
+      <p dir="auto">For each legislature, the CLD holds nine tables:</p>
+      <ol dir="auto">
+        <li><em class="text-cld-blue">Core</em> (sociodemographic data)</li>
+        <li><em class="text-cld-blue">Political</em> (political data)</li>
+        <li><em class="text-cld-blue">History</em> (full revision records of individual Wikipedia biographies)</li>
+        <li><em class="text-cld-blue">Traffic</em> (daily user traffic on individual Wikipedia biographies starting from July 2007)</li>
+        <li><em class="text-cld-blue">Social</em> (social media handles and personal website URLs)</li>
+        <li><em class="text-cld-blue">Portraits</em> (URLs to portraits)</li>
+        <li><em class="text-cld-blue">Offices</em> (public offices)</li>
+        <li><em class="text-cld-blue">Professions</em> (professions)</li>
+        <li><em class="text-cld-blue">IDs</em> (identifiers linking politicians to other files, databases, or websites)</li>
+      </ol>
+      <div class="row-central">
+        <div class="col-sm-6">
+          <object data="assets/img/data-structure.svg" style="position:relative;margin-left:2rem;margin-right:2rem;height:100%; width:100%"> </object>
+        </div>
+        <div class="col-sm-6 text-dark" >
+
+          <p dir="auto">The tables contain the following variables (see respective R help files for further details):</p>
+          <ul dir="auto">
+            <li><em>Core</em>: Country, Wikipedia page ID, Wikidata ID, Wikipedia Title, full name, sex, ethnicity, religion, date of birth and death, place of birth and death.</li>
+            <li><em>Political</em>: Wikipedia page ID, legislative session, party affiliation, lower constituency, upper constituency, constituency ID, start and end date of legislative session, period of service, majority status, leader positions.</li>
+            <li><em>History</em>: Wikipedia page ID, Wikipedia revision and previous revision ID, editor name/IP and ID, revision date and time, revision size, revision comment.</li>
+            <li><em>Traffic</em>: Wikipedia page ID, date, user traffic.</li>
+            <li><em>Social</em>: Wikidata ID, Twitter handle, Facebook handle, Youtube ID, Google Plus ID, Instagram handle, LinkedIn ID, personal website URL.</li>
+            <li><em>Portraits</em>: Wikipedia page ID, Wikipedia portrait URL.</li>
+            <li><em>Offices</em>: Wikidata ID, a range of offices such as attorney general, chief justice, mayor, party chair, secretary of state, etc.</li>
+            <li><em>Professions</em>: Wikidata ID, a range of professions such as accountant, farmer, historian, judge, mechanic, police officer, salesperson, teacher, etc.</li>
+            <li><em>IDs</em>: Wikidata ID, IDs for integration with various political science datsets as well as a range of other IDs such as parliamentary website IDs, Library of Congress or German National Library IDs, Notable Names Database or Project Vote Smart IDs, etc.</li>
+          </ul>
+          <p dir="auto">Note that for some legislatures or legislative periods, tables may only hold information for a subset of politicians or variables. In successive versions of the CLD, we fill some of these gaps.</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div id="LegislatoR" class="tabcontent">
+      <h3>LegislatoR</h3>
+      <p><b style="color:#cc0065">legislatoR</b> is a package for the software environment R that facilitates access to the Comparative Legislators Database (CLD). The package is available through CRAN and GitHub. To install the package from CRAN, type:</p>
+      <pre><code class="r">install.packages("legislatoR")</code></pre>
+      <p> You can also download the development version directly from Github:</p>
+      <pre><code class="r"># install.packages("devtools")
+devtools::install_github("saschagobel/legislatoR")</code></pre>
+<hr>
+      <h3>Usage</h3>
+      <p>A working Internet connection is required to access the <b style="color:#cc0065">CLD</b> in R. This is because the data are stored online and not installed together with the package. The package provides table-specific function calls. These functions are named after the respective table and preceded by <code>get_</code>. To fetch the Core table, use the <code>get_core()</code> function, for the Political table, use the <code>get_political()</code> function. Call the package help file via <code>?legislatoR()</code> to get an overview of all function calls. Tables are legislature-specific, so a three-letter country code must be passed as an argument to the function. Here is a breakdown of all country codes. You can also call the <code>cld_content()</code> function to get an overview of the CLD's scope and valid country codes.</p>
+      <div class="legislator-table table-hover text-center">
+        <table>
+  <thead>
+  <tr>
+  <th>Legislature</th>
+  <th align="center">Code</th>
+  <th>Legislature</th>
+  <th align="center">Code</th>
+  <th>Legislature</th>
+  <th align="center">Code</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>Austrian Nationalrat</td>
+  <td align="center"><code>aut</code></td>
+  <td>German Bundestag</td>
+  <td align="center"><code>deu</code></td>
+  <td>UK House of Commons</td>
+  <td align="center"><code>gbr</code></td>
+  </tr>
+  <tr>
+  <td>Canadian House of Commons</td>
+  <td align="center"><code>can</code></td>
+  <td>Irish Dail</td>
+  <td align="center"><code>irl</code></td>
+  <td>United States Congress</td>
+  <td align="center"><code>usa_house</code>/<code>usa_senate</code></td>
+  </tr>
+  <tr>
+  <td>Czech Poslanecka Snemovna</td>
+  <td align="center"><code>cze</code></td>
+  <td>Scottish Parliament</td>
+  <td align="center"><code>sco</code></td>
+  <td></td>
+  <td align="center"></td>
+  </tr>
+  <tr>
+  <td>French Assemblée</td>
+  <td align="center"><code>fra</code></td>
+  <td>Spanish Congreso</td>
+  <td align="center"><code>esp</code></td>
+  <td></td>
+  <td align="center"></td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+      </div>
+
+      <div id="Tutorial" class="tabcontent">
+        <h3>Tutorial</h3>
+        <p>Use case with CLD and <code>ggplot</code>.</p>
+      </div>
+    </section>
+
+
+
+    <!-- Footer-->
+    <footer class="footer py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 text-lg-start">Copyright &copy; CLD 2021</div>
+          <div class="col-lg-4 my-3 my-lg-0">
+            <a class="btn btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-social mx-2" href="#!"><i class="fab fa-github"></i></a>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      Threads
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Illustration
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      Explore
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Graphic Design
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      Finish
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Identity
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 4 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      Lines
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Branding
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 5 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      Southwest
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Website Design
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 6 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      Window
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Photography
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <
+    <script>
+    function openPage(pageName,elmnt,color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <!-- * *                               SB Forms JS                               * *-->
+  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
