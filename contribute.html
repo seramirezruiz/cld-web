@@ -35,36 +35,33 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <!--<a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>-->
       <a class="navbar-brand js-scroll-trigger" href="index.html">CLD</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars ml-1"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+        <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
           <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
-          <li class="nav-item"><a class="nav-link" href="contribute.html">Contribute</a></li>
+          <li class="nav-item"><a class="nav-link" href="contribute.html" style="color:#cc0055; font-weight: bold;">Contribute</a></li>
           <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
           <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
           <a class="btn btn-social mx-2" href="https://twitter.com/complegdatabase" target="_blank"><i class="fab fa-twitter" ></i></a>
-          <a class="btn btn-social mx-2" href="https://github.com/saschagobel/legislatoR" target="_blank"><i class="fab fa-github" ></i></a>
         </ul>
       </div>
     </div>
   </nav>
 
 
-  <!-- Header-->
-  <section class="page-section bg-cld" id="header">
+
+  <section class="page-section bg-light" id="header">
+    <!-- Header
     <div class="container-short">
-      <div class="text-center">
-        <div class="col-lg-12 text-center">
-          <p class="section-heading text-uppercase text-light text-header">Contribute</p>
-        </div>
-      </div>
+          <div class="text-center">
+            <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-cld-blue hidden-xs">How to contribute</p>
+            <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-cld-blue hidden-xl">Contribute</p>
+          </div>
     </div>
-  </section>
 
   <section class="page-section bg-light" id="datacollection">
     <div class="container text-center text-cld-blue">
@@ -80,13 +77,17 @@
       </div>
       <hr>
     </div>
+    -->
 
     <div class="container">
+
+      <!--
       <div class="text-center" id="tab-id">
         <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xs">How to contribute</p>
         <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xl">Contribute</p>
       </div>
-      <div class ="tab">
+    -->
+      <div class ="tab d-flex">
 
         <button class="tablink" onclick="openPage('Data', this, '#cc0065')" id="defaultOpen" >Our framework</button>
         <button class="tablink" onclick="openPage('Getting the files', this, '#cc0065')" >Getting the files</button>
@@ -148,7 +149,7 @@
           </div>
 
           <div class="col text-center">
-            <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Getting the files', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Get started with the tutorial!</button>
+            <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Getting the files', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Start the tutorial.</button>
           </div>
         </div>
       </div>
@@ -169,7 +170,7 @@
         <div class="text-center">
           <img src="assets/img/contribute/wiki-index.png" alt="wiki-index" style="position:relative; margin-bottom:1rem" class="img-cont">
         </div>
-        <p >As you will see later, a lot of what we will do during our data collection process will rely on finding patterns. At this stage, we would like to look for patterns in the URLs of the index pages to download them. You could also download them one by one, but where is the fun in that, right?<br>
+        <p >As you will see later, a lot of what we will do during our data collection process will rely on finding patterns. At this stage, we would like to look for patterns in the URLs of the index pages to download them. You could also download them one by one manually into your local folder.<br>
           In most cases, as it is with the <i>Camera dei Deputati</i> sites, the URL strings are consistent, for example:<br>
           <ul style="word-wrap: break-word">
             <li><span style="background-color: #FFFF00">it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_</span><span style="color:#cc0065">1948</span></li>
@@ -177,7 +178,6 @@
             <li><span style="background-color: #FFFF00">it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_</span><span style="color:#cc0065">1958</span></li>
           </ul>
           Thanks to the conscistency of the URL strings, we can create easily create a vector containing the URLs of all the files we would like to download. This reasoning can be adapted to other legislatures. This is how the code would look like: <br>
-          <span style="color:#cc0065">(P.S. don't worry, we will break it down line by line).</span>
         </p>
         <pre><code>source("code/packages.R")
 source("code/functions.R")
@@ -194,7 +194,7 @@ url_list <- glue::glue("https://it.wikipedia.org/wiki/Eletti_alla_Camera_dei_dep
 file_names <- glue::glue("{leg_ses}_chamber_session_ITA.html")
 
 # download pages
-folder <- "data/italy-chamber/html/"
+folder <- "data/italy_chamber/html/"
 dir.create(folder)
 for (i in 1:length(url_list)) {
   if (!file.exists(paste0(folder, file_names[i]))) {
@@ -204,7 +204,7 @@ for (i in 1:length(url_list)) {
 }
         </code></pre>
         <div class="col text-center">
-          <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Identifying the entities', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Let's move to the next step!</button>
+          <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Identifying the entities', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Move to the next step.</button>
         </div>
         <hr>
 
@@ -240,7 +240,7 @@ parsed_html
         </div>
         <hr>
         <h3>Getting familiar with our XPaths</h3>
-        <p>We can inspect the structure of our html files through our browser. Let's take the first legislator as an example. We can right click on the name and select <i>Inspect</i>. The code to render the page will appear on a panel in our browser with the attribute specific to the name we clicked on opened by default. In this case, it would be:<br>
+        <p>We can inspect the structure of our HTML files through our browser. Let's take the first legislator as an example. We can right click on the name and select <i>Inspect</i>. The code to render the page will appear on a panel in our browser with the attribute specific to the name we clicked on opened by default. In this case, it would be:<br>
           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<code><span style="color: #007700">&lt;a</span> <span style="color: #000077">href=</span><span style="background-color: #e0e0ff">&quot;/wiki/Attilio_Piccioni&quot;</span> <span style="color: #000077">title=</span><span style="background-color: #e0e0ff">&quot;Attilio Piccioni&quot;</span><span style="color: #007700">&gt;</span>Attilio Piccioni<span style="color: #007700">&lt;/a&gt;</span>
           </code> <br>
           As we can see, this <code>&lt;a&gt;</code> tag contains some data we are interested in. That is, the <span style="color: #000077">href</span> attribute holds the path to the legislator's Wikipedia page and the <span style="color: #000077">title</span> attribute the name of the legislator.</p>
@@ -249,7 +249,7 @@ parsed_html
           </div>
           <p>If we further right-clicked on it, then copy + Copy XPath, we would get some extra information that would help us in the parsing of the information.<br>
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b style="color:#cc0065">The output XPath to Attilio Piccioni would be:</b><code style="color: #000077"> //*[@id="mw-content-text"]/div[1]/table[2]/tbody/tr[2]/td[3]/a</code><br>
-            Though criptic initially, this bit of text will serve two purposes: a) as a blueprint to help us understand the underlying structure of the file and b) as a selector to aid us in gathering the attributes we require for our database.<br>
+            Though criptic initially, this bit of text will serve two purposes: <br>&nbsp&nbsp&nbsp&nbspa) as a blueprint to help us understand the underlying structure of the file <br>&nbsp&nbsp&nbsp&nbspb) as a selector to aid us in gathering the attributes we require for our database.<br>
             To understand the <b>structure</b>, we can work backwards from <code style="color: #000077"> //*[@id="mw-content-text"]/<span style="background-color:#ff2e4c">div[1]</span>/<span style="background-color:#00ffd9">table[2]</span>/tbody/<span style="background-color: #10ff00">tr[2]</span>/<span style="background-color: #FFFF00">td[3]</span>/a</code>. For example, we will now know that the <code>&lt;a&gt;</code> tag with Attilio Piccioni's information is located in the section where <code style="color: #000077">id="mw-content-text"</code> (as is the case with the content of most Wikipedia entries). This also tells us that the tag is the <span style="background-color: #FFFF00">third cell</span> of the <span style="background-color: #10ff00">second row</span> of the <span style="background-color:#00ffd9">second table</span> of the <span style="background-color:#ff2e4c">first section</span>.
           </p>
           <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -416,7 +416,8 @@ list_table
           <p style="color:#cc0065">(P.S. we don't need to worry about <code>list_table</code> containing also the information for the constituencies and the parties, since we are joining by name.)</p>
           <hr>
           <h3>Building our collector</h3>
-          <p>As we said before, a lot of what we will do relies on finding patterns. Our job from here is to inspect all the index pages and find commonalities. Normally, Wikipedians will maintain a constant format for each legislature. From our experience, only small things change from term to term, such as: the number of the table the information is located in, the headers to introduce the information (e.g. Circoscrizione instead or Collegio), or the number of columns in each table. Still, for the most part you can reuse the code and deal with the exeptions within your collector function.</p>
+          <p>As we said before, a lot of what we will do relies on finding patterns. Our job from here is to inspect all the index pages and find commonalities. Normally, Wikipedians will maintain a constant format for each legislature. From our experience, only small things change from term to term, such as: the number of the table the information is located in, the headers to introduce the information (e.g. Circoscrizione instead or Collegio), or the number of columns in each table. Still, for the most part you can reuse the code and deal with the exeptions within your collector function.<br>
+          In this case, the code to extract the information from the 1st session of <i>Camera dei Deputati</i> works for the 2, 3, and 5 sessions. To deal with the exceptions, you can embed <b>conditional expressions</b> within the function stating how to extract information from the pages that are formatted differently.</p>
           <pre><code class="r">#### ITALY CHAMBER WIKIPEDIA INFORMATION EXTRACTION =============================================
 
 collectorItalyChamber <- function(paths) {
@@ -493,7 +494,7 @@ collectorItalyChamber <- function(paths) {
   </pre></code>
           <hr>
           <div class="col text-center">
-            <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Collecting the data', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Let's get the data!</button>
+            <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Collecting the data', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Get the data.</button>
           </div>
 
         </div>
@@ -503,10 +504,390 @@ collectorItalyChamber <- function(paths) {
           <p>Once we have created our <i>collector function</i>, we have to follow a series of steps to gather all our data. Things from here will be straightforward. We just need to create a data frame containing the names of the files, the legislative session, and the years. After that, it will be an exercise of replacing strings to match the new legislature.In this tutorial, we will follow-through with the <i>Camera dei Deputati</i>. Still, to make things easier, you can use the <code>code/02-collection-sample</code> script that has clear instructions on which strings to replace to collect the data.
           </p>
           <hr>
-          <h3>Using the <code>collectorItalyChamber()</code> function</h3>
-          <p>In the previous step, we built our <i>collector function</i>. We leveraged the patterns in the different legislative index pages to create the instructions to parse the entities. Our code will iterate across pages with a similar structure based on the legislative session. <br>
-          In this step, we will show you how we built our <code>collectorItalyChamber()</code> function to gather the expected output for all the 18 legislative terms of the <i>Camera dei Deputati</i></p>
+          <h3>Building the legislature index</h3>
+          <p>At this stage, the HTML files of the legislature should be downloaded locally to the <code>data/italy_chamber/html/</code> folder.</p><pre><code class="r">#### PREPARATIONS =======================================================================
 
+source("code/packages.R")
+source("code/functions.R")
+
+
+#### DOWNLOAD INDEX PAGES =========
+
+
+leg_ses &lt- c("1948", "1953", "1958", "1963", "1968", "1972", "1976",
+             "1979", "1983", "1987", "1992", "1994", "1996", "2001",
+             "2006", "2008", "2013", "2018") # 1st to 18th sessions
+
+url_list &lt- glue::glue("https://it.wikipedia.org/wiki/Eletti_alla_Camera_dei_deputati_nelle_elezioni_politiche_italiane_del_{leg_ses}")
+
+file_names &lt- glue::glue("{leg_ses}_chamber_session_ITA.html")
+
+# download pages
+folder &lt- "data/italy_chamber/html/"
+dir.create(folder)
+for (i in 1:length(url_list)) {
+  if (!file.exists(paste0(folder, file_names[i]))) {
+    download.file(url_list[i], destfile = paste0(folder, file_names[i])) # , method = "libcurl" might be needed on windows machine
+    Sys.sleep(runif(1, 0, 1))
+  }
+}</code></pre>
+          <p>An index to guide the handling of exceptions from the <code>collectorItalyChamber()</code> can be built around these files. You can build the table manually and load it into the  environment, or create within <code>R</code>.The <code>path_soure</code> table should contain the following elements:<ul>
+            <li><code>files</code> contains the local path to each HTML file which contains the data you intend to scrape.</li>
+            <li><code>session</code> contains the session numbers that the collector function will use for exception handling.</li>
+            <li><code>year</code> contains the start year of the legislative session.</li>
+          </ul>
+          </p>
+          <pre><code class="r">#### DATA COLLECTION ====================================================================
+
+# path to local html files --------------------------------------------------------------
+source &lt- "data/italy_chamber/html" # local html location
+
+# session-specific xpaths ---------------------------------------------------------------
+path_source &lt- tibble(files = mixedsort(list.files(source, full.names = TRUE), decreasing = TRUE),
+    session = seq(18,1,-1),
+    year = as.numeric(stringr::str_extract(files, stringr::regex("\\d+"))))
+
+path_source
+
+## A tibble: 18 × 3
+## files                                                     session year
+## &ltchr>                                                       &ltdbl> &ltdbl>
+## 1  data/italy_chamber/html/2018_chamber_session_ITA.html       18  2018
+## 2  data/italy_chamber/html/2013_chamber_session_ITA.html       17  2013
+## 3  data/italy_chamber/html/2008_chamber_session_ITA.html       16  2008
+## 4  data/italy_chamber/html/2006_chamber_session_ITA.html       15  2006
+## 5  data/italy_chamber/html/2001_chamber_session_ITA.html       14  2001
+## 6  data/italy_chamber/html/1996_chamber_session_ITA.html       13  1996
+## 7  data/italy_chamber/html/1994_chamber_session_ITA.html       12  1994
+## 8  data/italy_chamber/html/1992_chamber_session_ITA.html       11  1992
+## 9  data/italy_chamber/html/1987_chamber_session_ITA.html       10  1987
+## 10 data/italy_chamber/html/1983_chamber_session_ITA.html       9  1983
+## 11 data/italy_chamber/html/1979_chamber_session_ITA.html       8  1979
+## 12 data/italy_chamber/html/1976_chamber_session_ITA.html       7  1976
+## 13 data/italy_chamber/html/1972_chamber_session_ITA.html       6  1972
+## 14 data/italy_chamber/html/1968_chamber_session_ITA.html       5  1968
+## 15 data/italy_chamber/html/1963_chamber_session_ITA.html       4  1963
+## 16 data/italy_chamber/html/1958_chamber_session_ITA.html       3  1958
+## 17 data/italy_chamber/html/1953_chamber_session_ITA.html       2  1953
+## 18 data/italy_chamber/html/1948_chamber_session_ITA.html       1  1948</code></pre>
+
+          <hr>
+          <h3>Using the <code>collectorItalyChamber()</code> function</h3>
+          <p>In the previous section, we built the <i>collector function</i>. We leveraged the patterns in the different legislative index pages to create the instructions to parse the entities. The code will iterate across pages with a similar structure based on the legislative session, while handling differences between them.<br>
+          The <code>collectorItalyChamber()</code> function expectes a single argument <code>paths</code>, the <b>legislature index</b> (i.e., <code>paths_source</code>), which will provide the HTML source to extract the nodes and gather the expected output for all the 18 legislative terms of the <i>Camera dei Deputati</i>. The function renders a set of nested lists containing the tables with the constituency, political party, name, and Wikipedia URL of each legislator for each session.</p>
+
+        <pre><code class="r"># retrieve basic data from Wikipedia tables ---------------------------------------------
+italy_chamber_core &lt- collectorItalyChamber(paths = path_source) %>%
+  purrr::map(magrittr::set_colnames, c("constituency", "party", "name", "url", "session"))
+
+italy_chamber_core
+
+## [[1]]
+## A tibble: 704 × 5
+##    constituency party              name                        url                                     session
+##    &ltchr>        &ltchr>              &ltchr>                       &ltchr>                                   &ltdbl>
+##  1 Piemonte 1   Centrosinistra     Andrea Giorgis              /wiki/Andrea_Giorgis                    18
+##  2 Piemonte 1   Centrodestra       Roberto Rosso               /wiki/Roberto_Rosso_(politico_196…      18
+##  3 Piemonte 1   Centrodestra       Augusta Montaruli           /wiki/Augusta_Montaruli                 18
+##  4 Piemonte 1   Centrosinistra     Stefano Lepri               /wiki/Stefano_Lepri_(politico)          18
+##  5 Piemonte 1   Movimento 5 Stelle Celeste D'Arrando           /wiki/Celeste_D%27Arrando               18
+##  6 Piemonte 1   Centrodestra       Alessandro Manuel Benvenuto /wiki/Alessandro_Manuel_Benvenuto       18
+##  7 Piemonte 1   Centrodestra       Carluccio Giacometto        /wiki/Carluccio_Giacometto              18
+##  8 Piemonte 1   Centrodestra       Claudia Porchietto          /wiki/Claudia_Porchietto                18
+##  9 Piemonte 1   Centrodestra       Claudia Porchietto          /wiki/Claudia_Porchietto                18
+## 10 Piemonte 1   Centrodestra       Daniela Ruffino             /wiki/Daniela_Ruffino                   18
+### … with 694 more rows
+### ℹ Use `print(n = ...)` to see more rows
+##
+## [[2]]
+### A tibble: 635 × 5
+##    constituency party                  name              url                           session
+##    &ltchr>        &ltchr>                  &ltchr>             &ltchr>                          &ltdbl>
+##  1 Piemonte 1   Partito Democratico    Cesare Damiano    /wiki/Cesare_Damiano           17
+##  2 Piemonte 1   Partito Democratico    Paola Bragantini  /wiki/Paola_Bragantini         17
+##  3 Piemonte 1   Partito Democratico    Giacomo Portas    /wiki/Giacomo_Portas           17
+##  4 Piemonte 1   Partito Democratico    Francesca Bonomo  /wiki/Francesca_Bonomo         17
+##  5 Piemonte 1   Partito Democratico    Edoardo Patriarca /wiki/Edoardo_Patriarca        17
+##  6 Piemonte 1   Partito Democratico    Anna Rossomando   /wiki/Anna_Rossomando          17
+##  7 Piemonte 1   Partito Democratico    Andrea Giorgis    /wiki/Andrea_Giorgis           17
+##  8 Piemonte 1   Partito Democratico    Antonio Boccuzzi  /wiki/Antonio_Boccuzzi         17
+##  9 Piemonte 1   Partito Democratico    Silvia Fregolent  /wiki/Silvia_Fregolent         17
+## 10 Piemonte 1   Partito Democratico    Umberto D'Ottavio /wiki/Umberto_D%27Ottavio      17
+##  # … with 625 more rows
+##  # ℹ Use `print(n = ...)` to see more rows
+##
+##  [[3]]
+##  # A tibble: 749 × 5
+##     constituency   party                name                   url                               session
+##     &ltchr>          &ltchr>                &ltchr>                  &ltchr>                             &ltdbl>
+##  1  Piemonte 1     Partito Democratico  Piero Fassino          /wiki/Piero_Fassino               16
+##  2  Piemonte 1     Partito Democratico  Antonio Boccuzzi       /wiki/Antonio_Boccuzzi            16
+##  3  Piemonte 1     Partito Democratico  Anna Rossomando        /wiki/Anna_Rossomando             16
+##  4  Piemonte 1     Partito Democratico  Giorgio Merlo          /wiki/Giorgio_Merlo               16
+##  5  Piemonte 1     Partito Democratico  Marco Calgaro          /wiki/Marco_Calgaro               16
+##  6  Piemonte 1     Partito Democratico  Gianni Vernetti        /wiki/Gianni_Vernetti             16
+##  7  Piemonte 1     Partito Democratico  Stefano Esposito       /wiki/Stefano_Esposito            16
+##  8  Piemonte 1     Partito Democratico  Giacomo Antonio Portas /wiki/Giacomo_Antonio_Portas      16
+##  9  Piemonte 1     Partito Democratico  Mimmo Lucà             /wiki/Mimmo_Luc%C3%A0             16
+##  10 Piemonte 1     Popolo della Libertà Guido Crosetto         /wiki/Guido_Crosetto              16
+##  # … with 739 more rows
+##  # ℹ Use `print(n = ...)` to see more rows
+##  …
+        </code></pre>
+        <hr>
+        <h3>Extracting and saving the data</h3>
+        <p>Once the <code>italy_chamber_core</code> object has been created. Things are very straightforward. You just need to use a set of provided functions that make the API calls to render the respective output for each of the tables in the database. If you are working with a different legislature, the only changes you will need to perform are:
+        <ul>
+          <li>replace all strings matching "<code>italy_chamber</code>" to the respective legislature name.</li>
+          <li>replace all "<code>it.wikipedia</code>" strings to match the project containing the legislature.</li>
+        </ul>
+        Finally, the function to retrieve the portraits of the legislators makes a call to the Face++ API. It does so to ensure that the photographs are indeed portraits. You will need to provide an API key; however, if cannot set this up, the CLD team can take care of it.</p>
+
+        <pre><code class="r"># retrieve basic data from Wikipedia tables ---------------------------------------------
+italy_chamber_core &lt- collectorItalyChamber(paths = path_source) %>%
+  purrr::map(magrittr::set_colnames, c("constituency", "party", "name", "url", "session"))
+
+# retrieve wikipedia page and wikidata ids ----------------------------------------------
+italy_chamber_ids &lt- italy_chamber_core %>%
+  purrr::map(mutate, url = paste0("https://it.wikipedia.org", url)) %>%
+  purrr::map(wikiIDs, .x$url)
+
+# bind ids to core data and collapse ----------------------------------------------------
+italy_chamber &lt- italy_chamber_ids %>%
+  purrr::map2_dfr(bind_cols, .y = italy_chamber_core)
+saveRDS(italy_chamber, "data/italy_chamber/italy_chamber")
+
+# retrieve wikipedia revision histories -------------------------------------------------
+italy_chamber_history &lt- italy_chamber %>%
+  magrittr::use_series(pageid) %>%
+  unique %>%
+  purrr::map_dfr(wikiHist, project = "it.wikipedia")
+saveRDS(italy_chamber_history, "data/italy_chamber/italy_chamber_history")
+
+# retrieve undirected wikipedia urls/titles ---------------------------------------------
+italy_chamber_title &lt- italy_chamber %>%
+  magrittr::use_series(pageid) %>%
+  unique %>%
+  undirectedTitle(project = "it.wikipedia")
+saveRDS(italy_chamber_title, "data/italy_chamber/italy_chamber_title")
+
+# retrieve wikipedia user traffic -------------------------------------------------------
+italy_chamber_traffic &lt- italy_chamber_title %>%
+  wikiTrafficNew(project = rep("it", dim(italy_chamber_title)[1]))
+saveRDS(italy_chamber_traffic, "data/italy_chamber/italy_chamber_traffic")
+
+# retrieve Wikidata entities ------------------------------------------------------------
+italy_chamber_entities &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  WikidataR::get_item()
+saveRDS(italy_chamber_entities, "data/italy_chamber/italy_chamber_entities")
+
+# retrieve legislator's sex -------------------------------------------------------------
+italy_chamber_sex &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities,
+           property = "P21") %>%
+  dplyr::mutate(sex = dplyr::case_when(
+    male == TRUE ~ "male",
+    female == TRUE ~ "female"
+  )) %>%
+  dplyr::select(-c(2,3))
+saveRDS(italy_chamber_sex, "data/italy_chamber/italy_chamber_sex")
+
+# retrieve legislator's religion --------------------------------------------------------
+italy_chamber_religion &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities,
+           property = "P140")
+saveRDS(italy_chamber_religion, "data/italy_chamber/italy_chamber_religion")
+
+# retrieve and format birth dates -------------------------------------------------------
+italy_chamber_birth &lt-  italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, date = TRUE,
+           property = "P569") %>%
+  mutate(date = stringr::str_replace_all(date, "\\+|T.+", "")) %>%
+  mutate(date = stringr::str_replace_all(date, "-00", "-01")) %>%
+  mutate(date = as.POSIXct(date, tz = "UTC"))
+saveRDS(italy_chamber_birth, "data/italy_chamber/italy_chamber_birth")
+
+# retrieve and format death dates -------------------------------------------------------
+italy_chamber_death &lt-  italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, date = TRUE,
+           property = "P570") %>%
+  mutate(date = stringr::str_replace_all(date, "\\+|T.+", "")) %>%
+  mutate(date = stringr::str_replace_all(date, "-00", "-01")) %>%
+  mutate(date = as.POSIXct(date, tz = "UTC"))
+saveRDS(italy_chamber_death, "data/italy_chamber/italy_chamber_death")
+
+# retrieve and format birth places ------------------------------------------------------
+italy_chamber_birthplace &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, location = TRUE,
+           property = "P19") %>%
+  mutate(lat = round(lat, digit = 5),
+         lon = round(lon, digit = 5)) %>%
+  mutate(birthplace = stringr::str_c(lat, ",", lon)) %>%
+  dplyr::select(wikidataid, birthplace)
+saveRDS(italy_chamber_birthplace, "data/italy_chamber/italy_chamber_birthplace")
+
+# retrieve and format death places ------------------------------------------------------
+italy_chamber_deathplace &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, location = TRUE,
+           property = "P20") %>%
+  mutate(lat = round(lat, digit = 5),
+         lon = round(lon, digit = 5)) %>%
+  mutate(deathplace = stringr::str_c(lat, ",", lon)) %>%
+  dplyr::select(wikidataid, deathplace)
+saveRDS(italy_chamber_deathplace, "data/italy_chamber/italy_chamber_deathplace")
+
+# retrieve and format social media data -------------------------------------------------
+italy_chamber_twitter &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P2002")
+italy_chamber_instagram &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P2003")
+italy_chamber_facebook &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P2013")
+italy_chamber_youtube &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P2397")
+italy_chamber_linkedin &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P6634")
+italy_chamber_website &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P856")
+italy_chamber_social &lt- list(italy_chamber_twitter, italy_chamber_facebook, italy_chamber_youtube, italy_chamber_instagram,
+                             italy_chamber_linkedin, italy_chamber_website) %>%
+  purrr::reduce(full_join, by = "wikidataid") %>%
+  purrr::set_names("wikidataid", "twitter", "facebook", "youtube",
+                   "linkedin", "instagram", "website")
+saveRDS(italy_chamber_social, "data/italy_chamber/italy_chamber_social")
+
+# retrieve and format portrait data -----------------------------------------------------
+italy_chamber_images &lt- italy_chamber %>%
+  magrittr::use_series(pageid) %>%
+  unique %>%
+  imageUrl(project = "it.wikipedia") %>%
+  faceDetection(api_key = api_key,
+                api_secret = api_secret) %>%
+  tidyr::drop_na()
+saveRDS(italy_chamber_images, "data/italy_chamber/italy_chamber_images")
+
+# retrieve and format ids ---------------------------------------------------------------
+italy_chamber_parlid &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P1341") #italian
+italy_chamber_gndid &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P227")
+italy_chamber_libcon &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P244")
+italy_chamber_bnfid &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P268")
+italy_chamber_freebase &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P646")
+italy_chamber_munzinger &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P1284")
+italy_chamber_nndb &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P1263")
+italy_chamber_imdb &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P345")
+italy_chamber_brittanica &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P1417")
+italy_chamber_quora &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P3417")
+italy_chamber_google_knowledge_graph &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, serial = TRUE,
+           property = "P2671")
+italy_chamber_ids &lt- list(italy_chamber_parlid, italy_chamber_gndid, italy_chamber_libcon, italy_chamber_bnfid,
+                          italy_chamber_freebase, italy_chamber_munzinger, italy_chamber_nndb, italy_chamber_imdb,
+                          italy_chamber_brittanica, italy_chamber_quora, italy_chamber_google_knowledge_graph) %>%
+  purrr::reduce(full_join, by = "wikidataid") %>%
+  purrr::set_names("wikidataid", "parlid", "gndif", "libcon", "bnfid",
+                   "freebase", "munzinger", "nndb", "imdb",
+                   "brittanica", "quora", "google_knowledge_graph")
+saveRDS(italy_chamber_ids, "data/italy_chamber/italy_chamber_ids")
+
+# retrieve and format positions ---------------------------------------------------------
+italy_chamber_positions &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, unique = TRUE,
+           property = "P39") %>%
+  dplyr::select(-unknown) %>%
+  data.table::setcolorder(order(names(.))) %>%
+  dplyr::select(wikidataid, everything())
+saveRDS(italy_chamber_positions, "data/italy_chamber/italy_chamber_positions")
+
+# retrieve and format occupation --------------------------------------------------------
+italy_chamber_occupation &lt- italy_chamber %>%
+  magrittr::use_series(wikidataid) %>%
+  unique %>%
+  wikiData(entity = italy_chamber_entities, unique = TRUE,
+           property = "P106") %>%
+  dplyr::select(-unknown) %>%
+  data.table::setcolorder(order(names(.))) %>%
+  dplyr::select(wikidataid, everything())
+saveRDS(italy_chamber_occupation, "data/italy_chamber/italy_chamber_occupation")</code></pre>
+
+<div class="col text-center">
+  <button type="tablink" class="btn btn-lg btn-block" onclick="openPageButton('Collecting the data', this, '#cc0065')" style="background-color:#cc0065; color:#FFF">Go back to the top.</button>
+</div>
         </div>
       </section>
 
@@ -537,6 +918,9 @@ collectorItalyChamber <- function(paths) {
       <script src="js/clipboard.min.js"></script>
       <
       <script>
+
+
+
       function openPageButton(pageName,elmnt,color) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -546,6 +930,9 @@ collectorItalyChamber <- function(paths) {
         tablinks = document.getElementsByClassName("tablink");
         for (i = 0; i < tablinks.length; i++) {
           tablinks[i].style.backgroundColor = "";
+        }
+        {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         document.getElementById(pageName).style.display = "block";
         document.getElementById("tab-id").scrollIntoView();

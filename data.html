@@ -10,10 +10,12 @@
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/pagedtable.js"></script>
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="css/styles.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/academicons.min.css"/>
@@ -35,521 +37,774 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <!--<a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>-->
       <a class="navbar-brand js-scroll-trigger" href="index.html">CLD</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars ml-1"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="data.html">Data</a></li>
+        <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="data.html" style="color:#cc0055; font-weight: bold;">Data</a></li>
           <li class="nav-item"><a class="nav-link" href="contribute.html">Contribute</a></li>
           <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
           <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
           <a class="btn btn-social mx-2" href="https://twitter.com/complegdatabase" target="_blank"><i class="fab fa-twitter" ></i></a>
-          <a class="btn btn-social mx-2" href="https://github.com/saschagobel/legislatoR" target="_blank"><i class="fab fa-github" ></i></a>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header-->
+  <!-- Header
+
   <section class="page-section bg-light" id="header">
-    <div class="container-short">
-      <div class="text-center">
-        <div class="col-lg-12 text-center">
-          <p style = "font-size:7em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue">Data</p>
-        </div>
-      </div>
+  <div class="container-short">
+  <div class="text-center">
+  <div class="col-lg-12 text-center">
+  <p style = "font-size:7em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue">Data</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="page-section-content bg-cld" id="legexp">
+<div class="container text-center text-light">
+<div class="row-central">
+<div class="col-sm-4">
+<object data="assets/img/sticker2.svg" style="position:relative;margin:auto;height:15em;" > </object>
+</div>
+<div class="col-sm-8">
+<p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-lights">LegislatoR package</p>
+<h4>The Comparative Legislators Database (CLD) includes political, sociodemographic, career, online presence, public attention, and visual information for over 45,000 contemporary and historical politicians from 14 countries and the European Parliament. </h4>
+<p>The CLD comes along the legislatoR package for the software environment R that facilitates access to the contents.</p>
+</div>
+</div>
+</div>
+</section>
+-->
+
+<section class="page-section bg-light" id="header">
+  <div class="container">
+    <!-- Header
+    <div class="text-center">
+      <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xs">The database</p>
+      <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xl">Database</p>
     </div>
-  </section>
-
-  <section class="page-section-content bg-cld" id="legexp">
-    <div class="container text-center text-light">
-      <div class="row-central">
-        <div class="col-sm-4">
-          <object data="assets/img/sticker2.svg" style="position:relative;margin:auto;height:15em;" > </object>
-        </div>
-        <div class="col-sm-8">
-          <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-lights">LegislatoR package</p>
-          <h4>The Comparative Legislators Database (CLD) includes political, sociodemographic, career, online presence, public attention, and visual information for over 45,000 contemporary and historical politicians from 14 countries and the European Parliament. </h4>
-          <p>The CLD comes along the legislatoR package for the software environment R that facilitates access to the contents.</p>
-        </div>
-      </div>
+  -->
+    <div class ="tab d-flex">
+      <button class="flex-fill tablink" onclick="openPage('Data', this, '#cc0065')" id="defaultOpen" >Data</button>
+      <button class="flex-fill tablink" onclick="openPage('Structure', this, '#cc0065')" >Structure</button>
+      <button class="flex-fill tablink" onclick="openPage('LegislatoR', this, '#cc0065')">LegislatoR</button>
     </div>
-  </section>
-  <!-- Header-->
-  <section class="page-section bg-light" id="header">
-    <div class="container">
-      <div class="text-center">
-        <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xs">The database</p>
-        <p style = "font-size:3em;text-decoration: underline #cc0065" class="section-heading text-uppercase text-cld-blue hidden-xl">Database</p>
+
+
+    <div id="Data" class="tabcontent">
+      <nav id="toc" data-toggle="toc"></nav>
+      <body data-spy="scroll" data-target="#toc"></body>
+      <div class="text-dark">
+        <h3>Data</h3>
+        <p>The Comparative Legislators Database (CLD) is a one-stop shop for rich, diverse and integrated individual-level data on national political representatives. The database contains information for over 45,000 contemporary and historical legislators from 14 countries and the European Parliament. In our project, we unite collaborative micro-data collection efforts. We bring these together through the use of Wikipedia and Wikidata. </p>
+
+        <hr>
+
+        <h4>Data access</h4>
+        <p>There are multiple ways to access the data depending your use-case. You can download individual <span style = "color:#cc0065">.csv </span>files for individual legislatures, generate <span style = "color:#cc0065">SQL queries</span> to gather specific information from the database, and finally use the <span style = "color:#cc0065">legislatoR</span> package for the software environment R.</p>
+
+        <hr>
+
+        <p>Below you will find an overview of our current coverage and other databases that the CLD can be integrated with:</p>
+
+        <table class="legislator-table table-hover"> <thead>
+          <tr>
+            <th>Country</th>
+            <th>Legislative sessions</th>
+            <th>Politicians (unique)</th>
+            <th>Integrated with</th>
+            <th>CSV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Austria (Nationalrat)</td>
+            <td>all 27<br> (1920-2019)</td>
+            <td>1,923</td>
+            <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/L4OAKN" rel="nofollow">ParlSpeech V2</a> (Rauh/Schwalbach 2020)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>Canada (House of Commons)</td>
+            <td>all 43<br> (1867-2019)</td>
+            <td>4,515</td>
+            <td></td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>Czech Republic (Poslanecka Snemovna)</td>
+            <td>all 8<br> (1992-2017)</td>
+            <td>1,020</td>
+            <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>France (Assemblée)</td>
+            <td>all 15<br> (1958-2017)</td>
+            <td>3,933</td>
+            <td></td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>Germany (Bundestag)</td>
+            <td>all 19<br> (1949-2017)</td>
+            <td>4,075</td>
+            <td><a href="https://dataverse.harvard.edu/dataverse/btvote" rel="nofollow">BTVote data</a> (Bergmann et al. 2018),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EBEDPI" rel="nofollow">Reelection Prospects data</a> (Stoffel/Sieberer 2017)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>Ireland (Dail)</td>
+            <td>all 33<br> (1918-2020)</td>
+            <td>1,408</td>
+            <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6MZN76" rel="nofollow">Database of Parliamentary Speeches in Ireland</a> (Herzog/Mikhaylov 2017)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>Scotland (Parliament)</td>
+            <td>all 5<br> (1999-2016)</td>
+            <td>305</td>
+            <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EQ9WBE" rel="nofollow">ParlScot</a> (Braby/Fraser 2021)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>Spain (Congreso de los Diputados)</td>
+            <td>all 14<br> (1979-2019)</td>
+            <td>2634</td>
+            <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/L4OAKN" rel="nofollow">ParlSpeech V2</a> (Rauh/Schwalbach 2020)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>United Kingdom (House of Commons)</td>
+            <td>all 58<br> (1801-2019)</td>
+            <td>13,215</td>
+            <td><a href="https://github.com/ArthurSpirling/EggersSpirlingDatabase">EggersSpirling data</a> (starting from <br> 38th session, Eggers/Spirling 2014),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td>United States (House and Senate)</td>
+            <td>all 116<br> (1789-2019)</td>
+            <td>12,512</td>
+            <td><a href="https://voteview.com/data" rel="nofollow">Voteview data</a> (Lewis et al. 2019), <br> <a href="http://www.congressionalbills.org/" rel="nofollow">Congressional Bills Project data</a> (Adler/Wilkserson 2018)</td>
+            <td>
+
+              <a class="btn btn-social mx-2" href="#" target="_blank"><i class="fa fa-download" ></i></a>
+
+            </td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td><strong>338</strong></td>
+            <td><strong>45,540</strong></td>
+            <td><strong>12</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  <div id="Structure" class="tabcontent">
+    <h3>Structure</h3>
+    <p>The CLD comes as a relational database. This means that all tables can be joined with the Core table via one of two keys - the <span style = "color:#cc0065">Wikipedia page ID</span> or the <span style = "color:#cc0065">Wikidata ID</span>. These keys uniquely identify individual politicians. The figure below illustrates this structure and the CLD's content.</p>
+    <p dir="auto">For each legislature, the CLD holds nine tables:</p>
+    <ol dir="auto">
+      <li><em class="text-cld-blue">Core</em> (sociodemographic data)</li>
+      <li><em class="text-cld-blue">Political</em> (political data)</li>
+      <li><em class="text-cld-blue">History</em> (full revision records of individual Wikipedia biographies)</li>
+      <li><em class="text-cld-blue">Traffic</em> (daily user traffic on individual Wikipedia biographies starting from July 2007)</li>
+      <li><em class="text-cld-blue">Social</em> (social media handles and personal website URLs)</li>
+      <li><em class="text-cld-blue">Portraits</em> (URLs to portraits)</li>
+      <li><em class="text-cld-blue">Offices</em> (public offices)</li>
+      <li><em class="text-cld-blue">Professions</em> (professions)</li>
+      <li><em class="text-cld-blue">IDs</em> (identifiers linking politicians to other files, databases, or websites)</li>
+    </ol>
+    <div class="row-central">
+      <div class="col-sm-6">
+        <object data="assets/img/data-structure.svg" style="position:relative;margin-left:2rem;margin-right:2rem;height:100%; width:100%"> </object>
       </div>
-      <div class ="tab">
+      <div class="col-sm-6 text-dark" >
 
-        <button class="tablink" onclick="openPage('Data', this, '#cc0065')" id="defaultOpen" >Data</button>
-        <button class="tablink" onclick="openPage('Structure', this, '#cc0065')" >Structure</button>
-        <button class="tablink" onclick="openPage('LegislatoR', this, '#cc0065')">LegislatoR</button>
-        <button class="tablink" onclick="openPage('Tutorial', this, '#cc0065')">Tutorial</button>
+        <p dir="auto">The tables contain the following variables (see respective R help files for further details):</p>
+        <ul dir="auto">
+          <li><em>Core</em>: Country, Wikipedia page ID, Wikidata ID, Wikipedia Title, full name, sex, ethnicity, religion, date of birth and death, place of birth and death.</li>
+          <li><em>Political</em>: Wikipedia page ID, legislative session, party affiliation, lower constituency, upper constituency, constituency ID, start and end date of legislative session, period of service, majority status, leader positions.</li>
+          <li><em>History</em>: Wikipedia page ID, Wikipedia revision and previous revision ID, editor name/IP and ID, revision date and time, revision size, revision comment.</li>
+          <li><em>Traffic</em>: Wikipedia page ID, date, user traffic.</li>
+          <li><em>Social</em>: Wikidata ID, Twitter handle, Facebook handle, Youtube ID, Google Plus ID, Instagram handle, LinkedIn ID, personal website URL.</li>
+          <li><em>Portraits</em>: Wikipedia page ID, Wikipedia portrait URL.</li>
+          <li><em>Offices</em>: Wikidata ID, a range of offices such as attorney general, chief justice, mayor, party chair, secretary of state, etc.</li>
+          <li><em>Professions</em>: Wikidata ID, a range of professions such as accountant, farmer, historian, judge, mechanic, police officer, salesperson, teacher, etc.</li>
+          <li><em>IDs</em>: Wikidata ID, IDs for integration with various political science datsets as well as a range of other IDs such as parliamentary website IDs, Library of Congress or German National Library IDs, Notable Names Database or Project Vote Smart IDs, etc.</li>
+        </ul>
+        <p dir="auto">Note that for some legislatures or legislative periods, tables may only hold information for a subset of politicians or variables. In successive versions of the CLD, we fill some of these gaps.</p>
       </div>
 
 
-      <div id="Data" class="tabcontent">
-        <nav id="toc" data-toggle="toc"></nav>
-        <body data-spy="scroll" data-target="#toc"></body>
-        <div class="text-dark">
-          <h3>Data</h3>
-          <p>The Comparative Legislators Database (CLD) is a one-stop shop for rich, diverse and integrated individual-level data on national political representatives. The database contains information for over 45,000 contemporary and historical legislators from 14 countries and the European Parliament. In our project, we unite collaborative micra-data collection efforts. We bring these together through the use of Wikipedia and Wikidata. </p>
+    </div>
+  </div>
 
-
-
-          <p>Below you will find an overview of our current coverage and other databases that the CLD can be integrated with:</p>
-
-          <table class="legislator-table table-hover"> <thead>
+  <div id="LegislatoR" class="tabcontent">
+    <h3>legislatoR</h3>
+    <p><b style="color:#cc0065">legislatoR</b> is a package for the software environment R that facilitates access to the Comparative Legislators Database (CLD). The package is available through CRAN and GitHub. To install the package from CRAN, type:</p>
+    <pre><code class="r">install.packages("legislatoR")</code></pre>
+    <p> You can also download the development version directly from Github:</p>
+    <pre><code class="r"># install.packages("devtools")
+devtools::install_github("saschagobel/legislatoR")</code></pre>
+      <hr>
+      <h3>Usage</h3>
+      <p>A working Internet connection is required to access the <b style="color:#cc0065">CLD</b> in R. This is because the data are stored online and not installed together with the package. The package provides table-specific function calls. These functions are named after the respective table and preceded by <code>legislatoR::get_</code>. To fetch the Core table, use the <code>legislatoR::get_core()</code> function, for the Political table, use the <code>legislatoR::get_political()</code> function. Call the package help file via <code>?legislatoR()</code> to get an overview of all function calls. Tables are legislature-specific, so a letter country code must be passed as an argument to the function. Here is a breakdown of all country codes. You can also call the <code>legislatoR::cld_content()</code> function to get an overview of the CLD's scope and valid country codes.</p>
+      <div class="legislator-table table-hover text-center">
+        <table>
+          <thead>
             <tr>
-              <th>Country</th>
-              <th>Legislative sessions</th>
-              <th>Politicians (unique)</th>
-              <th>Integrated with</th>
+              <th>Legislature</th>
+              <th align="center">Code</th>
+              <th>Legislature</th>
+              <th align="center">Code</th>
+              <th>Legislature</th>
+              <th align="center">Code</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Austria (Nationalrat)</td>
-              <td>all 27<br> (1920-2019)</td>
-              <td>1,923</td>
-              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/L4OAKN" rel="nofollow">ParlSpeech V2</a> (Rauh/Schwalbach 2020)</td>
+              <td>Austrian Nationalrat</td>
+              <td align="center"><code>aut</code></td>
+              <td>German Bundestag</td>
+              <td align="center"><code>deu</code></td>
+              <td>UK House of Commons</td>
+              <td align="center"><code>gbr</code></td>
             </tr>
             <tr>
-              <td>Canada (House of Commons)</td>
-              <td>all 43<br> (1867-2019)</td>
-              <td>4,515</td>
+              <td>Canadian House of Commons</td>
+              <td align="center"><code>can</code></td>
+              <td>Irish Dail</td>
+              <td align="center"><code>irl</code></td>
+              <td>United States Congress</td>
+              <td align="center"><code>usa_house</code>/<code>usa_senate</code></td>
+            </tr>
+            <tr>
+              <td>Czech Poslanecka Snemovna</td>
+              <td align="center"><code>cze</code></td>
+              <td>Scottish Parliament</td>
+              <td align="center"><code>sco</code></td>
               <td></td>
+              <td align="center"></td>
             </tr>
             <tr>
-              <td>Czech Republic (Poslanecka Snemovna)</td>
-              <td>all 8<br> (1992-2017)</td>
-              <td>1,020</td>
-              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017)</td>
-            </tr>
-            <tr>
-              <td>France (Assemblée)</td>
-              <td>all 15<br> (1958-2017)</td>
-              <td>3,933</td>
+              <td>French Assemblée</td>
+              <td align="center"><code>fra</code></td>
+              <td>Spanish Congreso</td>
+              <td align="center"><code>esp</code></td>
               <td></td>
-            </tr>
-            <tr>
-              <td>Germany (Bundestag)</td>
-              <td>all 19<br> (1949-2017)</td>
-              <td>4,075</td>
-              <td><a href="https://dataverse.harvard.edu/dataverse/btvote" rel="nofollow">BTVote data</a> (Bergmann et al. 2018),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EBEDPI" rel="nofollow">Reelection Prospects data</a> (Stoffel/Sieberer 2017)</td>
-            </tr>
-            <tr>
-              <td>Ireland (Dail)</td>
-              <td>all 33<br> (1918-2020)</td>
-              <td>1,408</td>
-              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6MZN76" rel="nofollow">Database of Parliamentary Speeches in Ireland</a> (Herzog/Mikhaylov 2017)</td>
-            </tr>
-            <tr>
-              <td>Scotland (Parliament)</td>
-              <td>all 5<br> (1999-2016)</td>
-              <td>305</td>
-              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EQ9WBE" rel="nofollow">ParlScot</a> (Braby/Fraser 2021)</td>
-            </tr>
-            <tr>
-              <td>Spain (Congreso de los Diputados)</td>
-              <td>all 14<br> (1979-2019)</td>
-              <td>2634</td>
-              <td><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/L4OAKN" rel="nofollow">ParlSpeech V2</a> (Rauh/Schwalbach 2020)</td>
-            </tr>
-            <tr>
-              <td>United Kingdom (House of Commons)</td>
-              <td>all 58<br> (1801-2019)</td>
-              <td>13,215</td>
-              <td><a href="https://github.com/ArthurSpirling/EggersSpirlingDatabase">EggersSpirling data</a> (starting from <br> 38th session, Eggers/Spirling 2014),<br> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E4RSP9" rel="nofollow">ParlSpeech V1</a> (Rauh et al. 2017)</td>
-            </tr>
-            <tr>
-              <td>United States (House and Senate)</td>
-              <td>all 116<br> (1789-2019)</td>
-              <td>12,512</td>
-              <td><a href="https://voteview.com/data" rel="nofollow">Voteview data</a> (Lewis et al. 2019), <br> <a href="http://www.congressionalbills.org/" rel="nofollow">Congressional Bills Project data</a> (Adler/Wilkserson 2018)</td>
-            </tr>
-            <tr>
-              <td><strong>10</strong></td>
-              <td><strong>338</strong></td>
-              <td><strong>45,540</strong></td>
-              <td><strong>12</strong></td>
+              <td align="center"></td>
             </tr>
           </tbody>
         </table>
       </div>
+      <hr>
+      <h3>Working with the <code>legislatoR</code> package in R</h3>
+      <p>The <b style="color:#cc0065">legislatoR</b> package provides an easy-to-use interface to the <b style="color:#cc0065">CLD</b> in R. This brief tutorial will present two use-cases to illustrate how to engage the different tables of the database to extract information for analyses. To be precise, we will:<br>
+        <ul>
+          <li>explore the distribution of seats in the U.S. Senate during the 116th United States Congress (Jan 2019 - Jan 2021)</li>
+          <li>map the birthplaces of all the members of the Bundestag by political party</li>
+        </ul>
+      The first step will be loading the libraries in R. We will employ a series of packages for data manipulation and visualization. If it is the first time you are using one of these packages, you will need to install them.</p>
+      <pre><code class="r"># load the libraries
+library(legislatoR)
+library(dplyr) #data manipulation
+library(ggplot2) #data visualization
+library(ggtext) #text aesthetics in ggplot2
+library(ggpol) #geom_parliament() (parliament plots)
+library(sf) #spatial vector encodings in R
+library(rnaturalearth) #natural earth map data
+library(rnaturalearthdata) #natural earth map data
+
+set.seed(1310) # to get consistent results from randomization</code></pre>
+      <hr>
+      <h4>The U.S. Senate during the 116th United States Congress</h4>
+      <p>The <em class = "text-cld-blue">Core</em> table is at the center of the database structure. This table contains basic demographic information about the legislators, in addition to the joining keys: <span style = "color:#cc0065">Wikipedia page ID</span> (<code>pageid</code>) and the <span style = "color:#cc0065">Wikidata ID</span> (<code>wikidataid</code>). These data can be retrieved through the <code>get_core()</code> call function. The call functions take the legislature code as an argument (i.e., <code>get_*(legislature="code")</code>). Each table can be called independently based on the use-case and can be linked through one of the joining keys.</p>
+      <pre><code class="r">legislatoR::get_core(legislature = "usa_senate") %>% # load US Senate core
+    dplyr::sample_n(10) #get ten random entries</code></pre>
+
+      <div data-pagedtable>
+        <script data-pagedtable-source type="application/json">
+        {"columns":[{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["pageid"],"name":[2],"type":["chr"],"align":["left"]},{"label":["wikidataid"],"name":[3],"type":["chr"],"align":["left"]},{"label":["wikititle"],"name":[4],"type":["chr"],"align":["left"]},{"label":["name"],"name":[5],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[6],"type":["chr"],"align":["left"]},{"label":["ethnicity"],"name":[7],"type":["chr"],"align":["left"]},{"label":["religion"],"name":[8],"type":["chr"],"align":["left"]},{"label":["birth"],"name":[9],"type":["dttm"],"align":["right"]},{"label":["death"],"name":[10],"type":["dttm"],"align":["right"]},{"label":["birthplace"],"name":[11],"type":["chr"],"align":["left"]},{"label":["deathplace"],"name":[12],"type":["chr"],"align":["left"]}],"data":[{"1":"USA-S","2":"733034","3":"Q1807209","4":"Jim_Sasser","5":"Jim Sasser","6":"male","7":"white","8":"NA","9":"1936-09-30","10":"<NA>","11":"35.1175,-89.97111","12":"NA"},{"1":"USA-S","2":"5146576","3":"Q1339780","4":"John_S._Wells","5":"John S. Wells","6":"male","7":"white","8":"NA","9":"1803-10-18","10":"1860-08-01","11":"43.13389,-70.92639","12":"42.98139,-70.94778"},{"1":"USA-S","2":"5109901","3":"Q2299278","4":"Solomon_W._Downs","5":"Solomon W. Downs","6":"male","7":"white","8":"NA","9":"1801-01-01","10":"1854-08-14","11":"36.5,-87.38","12":"37.46,-84.66"},{"1":"USA-S","2":"2147568","3":"Q881113","4":"John_Pastore","5":"John O. Pastore","6":"male","7":"white","8":"catholicism","9":"1907-03-17","10":"2000-07-15","11":"41.83083,-71.415","12":"41.78333,-71.44167"},{"1":"USA-S","2":"2322813","3":"Q369493","4":"Timothy_O._Howe","5":"Timothy O. Howe","6":"male","7":"white","8":"NA","9":"1816-02-24","10":"1883-03-25","11":"44.38389,-70.24917","12":"38.895,-77.03667"},{"1":"USA-S","2":"2572587","3":"Q1967282","4":"J._Frank_Allee","5":"J. Frank Allee","6":"male","7":"white","8":"NA","9":"1857-12-02","10":"1938-10-12","11":"39.16194,-75.52667","12":"39.16194,-75.52667"},{"1":"USA-S","2":"871727","3":"Q1244777","4":"James_L._Buckley","5":"James L. Buckley","6":"male","7":"white","8":"NA","9":"1923-03-09","10":"<NA>","11":"40.67,-73.94","12":"NA"},{"1":"USA-S","2":"1102476","3":"Q359294","4":"John_J._McRae","5":"John J. McRae","6":"male","7":"white","8":"NA","9":"1815-01-10","10":"1868-05-31","11":"34.81333,-79.97583","12":"17.49861,-88.18861"},{"1":"USA-S","2":"4856982","3":"Q2158142","4":"Robert_M._Charlton","5":"Robert M. Charlton","6":"male","7":"white","8":"NA","9":"1807-01-19","10":"1854-01-18","11":"32.05083,-81.10389","12":"32.05083,-81.10389"},{"1":"USA-S","2":"1279245","3":"Q453709","4":"Sheila_Frahm","5":"Sheila Frahm","6":"female","7":"white","8":"NA","9":"1945-03-22","10":"<NA>","11":"39.3922,-101.048","12":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+        </script>
+      </div>
+      <hr>
+      <p>In this case, we will employ <em class = "text-cld-blue">Political</em> table to derive the counts of the seats each party held:</p>
+
+      <pre><code class="r"># load US Senate political table for the 116th Congress
+us_senate_political <- legislatoR::get_political(legislature = "usa_senate") %>%
+  dplyr::filter(session == 116) #filter only legislators from the 116th Congress
+
+dplyr::sample_n(us_senate_political, 10) #print ten random entries</code></pre>
+
+      <div data-pagedtable>
+      <script data-pagedtable-source type="application/json">
+      {"columns":[{"label":["pageid"],"name":[1],"type":["chr"],"align":["left"]},{"label":["session"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["party"],"name":[3],"type":["chr"],"align":["left"]},{"label":["constituency"],"name":[4],"type":["chr"],"align":["left"]},{"label":["session_start"],"name":[5],"type":["date"],"align":["right"]},{"label":["session_end"],"name":[6],"type":["date"],"align":["right"]},{"label":["service"],"name":[7],"type":["int"],"align":["right"]},{"label":["senate_majority"],"name":[8],"type":["lgl"],"align":["right"]},{"label":["senate_president"],"name":[9],"type":["lgl"],"align":["right"]},{"label":["senate_president_pro_tempore"],"name":[10],"type":["lgl"],"align":["right"]},{"label":["senate_president_pro_tempore_emeritus"],"name":[11],"type":["lgl"],"align":["right"]},{"label":["senate_permanent_acting_president_pro_tempore"],"name":[12],"type":["lgl"],"align":["right"]},{"label":["senate_deputy_president_pro_tempore"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["senate_republican_conference_chair"],"name":[14],"type":["lgl"],"align":["right"]},{"label":["senate_republican_conference_vice_chair"],"name":[15],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_conference_chair"],"name":[16],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_conference_vice_chair"],"name":[17],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_caucus_chair"],"name":[18],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_caucus_vice_chair"],"name":[19],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_caucus_secretary"],"name":[20],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_conference_secretary"],"name":[21],"type":["lgl"],"align":["right"]},{"label":["senate_republican_conference_secretary"],"name":[22],"type":["lgl"],"align":["right"]},{"label":["senate_senatorial_committee_chair"],"name":[23],"type":["lgl"],"align":["right"]},{"label":["senate_national_senatorial_committee_chair"],"name":[24],"type":["lgl"],"align":["right"]},{"label":["senate_policy_committee_chair"],"name":[25],"type":["lgl"],"align":["right"]},{"label":["senate_republican_policy_committee_chair"],"name":[26],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_policy_committee_chair"],"name":[27],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_policy_committee_vice_chair"],"name":[28],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_steering_outreach_committee_chair"],"name":[29],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_steering_outreach_committee_vice_chair"],"name":[30],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_steering_committee_chair"],"name":[31],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_committee_outreach_chair"],"name":[32],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_rural_outreach_chair"],"name":[33],"type":["lgl"],"align":["right"]},{"label":["senate_republican_conference_secretary__1"],"name":[34],"type":["chr"],"align":["left"]},{"label":["senate_republican_campaign_committee_chair"],"name":[35],"type":["lgl"],"align":["right"]},{"label":["senate_democratic_campaign_committee_chair"],"name":[36],"type":["lgl"],"align":["right"]},{"label":["senate_majority_leader"],"name":[37],"type":["lgl"],"align":["right"]},{"label":["senate_majority_whip"],"name":[38],"type":["lgl"],"align":["right"]},{"label":["senate_chief_deputy_whip"],"name":[39],"type":["lgl"],"align":["right"]},{"label":["senate_majority_deputy_whips"],"name":[40],"type":["lgl"],"align":["right"]},{"label":["senate_minority_leader"],"name":[41],"type":["lgl"],"align":["right"]},{"label":["senate_counselor_to_minority_leader"],"name":[42],"type":["lgl"],"align":["right"]},{"label":["senate_minority_assistant_leader"],"name":[43],"type":["lgl"],"align":["right"]},{"label":["senate_minority_whip"],"name":[44],"type":["lgl"],"align":["right"]},{"label":["senate_minority_deputy_whip"],"name":[45],"type":["lgl"],"align":["right"]},{"label":["senate_republican_conference_secretary_1"],"name":[46],"type":["lgl"],"align":["right"]}],"data":[{"1":"1461855","2":"116","3":"D","4":"Virginia","5":"2019-01-03","6":"2021-01-03","7":"731","8":"FALSE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"335844","2":"116","3":"D","4":"Michigan","5":"2019-01-03","6":"2021-01-03","7":"731","8":"FALSE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"959147","2":"116","3":"D","4":"Connecticut","5":"2019-01-03","6":"2021-01-03","7":"731","8":"FALSE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"496707","2":"116","3":"Independent","4":"Maine","5":"2019-01-03","6":"2021-01-03","7":"731","8":"FALSE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"850170","2":"116","3":"R","4":"North Carolina","5":"2019-01-03","6":"2021-01-03","7":"731","8":"TRUE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"16180456","2":"116","3":"R","4":"Mississippi","5":"2019-01-03","6":"2021-01-03","7":"731","8":"TRUE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"13396981","2":"116","3":"D","4":"New Hampshire","5":"2019-01-03","6":"2021-01-03","7":"731","8":"FALSE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"27658059","2":"116","3":"R","4":"South Carolina","5":"2019-01-03","6":"2021-01-03","7":"731","8":"TRUE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"411739","2":"116","3":"R","4":"Georgia","5":"2019-01-03","6":"2021-01-03","7":"731","8":"TRUE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"},{"1":"2600365","2":"116","3":"D","4":"Rhode Island","5":"2019-01-03","6":"2021-01-03","7":"731","8":"FALSE","9":"FALSE","10":"FALSE","11":"FALSE","12":"NA","13":"NA","14":"FALSE","15":"FALSE","16":"NA","17":"NA","18":"FALSE","19":"FALSE","20":"FALSE","21":"NA","22":"NA","23":"NA","24":"NA","25":"FALSE","26":"FALSE","27":"FALSE","28":"NA","29":"NA","30":"NA","31":"FALSE","32":"FALSE","33":"NA","34":"NA","35":"FALSE","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"NA","43":"FALSE","44":"FALSE","45":"NA","46":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+      </script>
+      </div>
+      <p>You can employ <code>dplyr</code> verbs to extract the seat counts per party and generate a visual illustration of the distribution:</p>
+
+      <pre><code class="r"># get the seat counts per party for parliament plot
+us_senate_counts <- us_senate_political %>%
+  dplyr::group_by(party) %>% #nest at party
+  dplyr::summarize(seats = n()) %>% #generate counts
+  dplyr::mutate(colors = dplyr::case_when(party == "D" ~ "#3885D3",
+                                          party == "R" ~ "#E02E44",
+                                          party == "Independent" ~ "#637684")) #assign party colors for visualization
+
+us_senate_counts</code></pre>
+      <div data-pagedtable="false">
+        <script data-pagedtable-source type="application/json">
+        {"columns":[{"label":["party"],"name":[1],"type":["chr"],"align":["left"]},{"label":["seats"],"name":[2],"type":["int"],"align":["right"]},{"label":["colors"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"D","2":"45","3":"#3885D3"},{"1":"Independent","2":"2","3":"#637684"},{"1":"R","2":"53","3":"#E02E44"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+        </script>
+      </div>
+      <p>We can use the <code>us_senate_counts</code> data frame as the input for our plot:</p>
+      <pre><code class="r"># a caption with some md formating
+caption_plot &lt- paste0("The 116th US Senate was controlled by the &ltb style='color:#E02E44'&gt Republican party&lt/b&gt with &ltb style='color:#E02E44'&gt",
+                       us_senate_counts$seats[us_senate_counts$party == "R"], # Number of Republican seats
+                       " seats&lt/b&gt.&ltbr&gtThe &ltb style='color:#3885D3'&gtDemocratric party&lt/b&gt held &ltb style='color:#3885D3'&gt",
+                       us_senate_counts$seats[us_senate_counts$party == "D"], # Number of Democrat seats
+                       " seats&lt/b&gt. The &ltb style='color:#637684'&gt",
+                       us_senate_counts$seats[us_senate_counts$party == "Independent"], # Number of Independent seats
+                       " Independents &lt/b&gtcaucased with the Democrats."
+)
+
+# plot parliament seats
+ggplot(us_senate_counts) +
+  ggpol::geom_parliament(aes(seats = seats, fill = party), color = "black") +
+  scale_fill_manual(values = us_senate_counts$colors, labels = us_senate_counts$party) +
+  coord_fixed() +
+  labs(title = "&ltb&gtUS Senate membership (116th Congress)&lt/b&gt",
+       caption = caption_plot) +
+  theme_void() +
+  theme(legend.position = "none",
+        plot.title = ggtext::element_markdown(),
+        plot.caption = ggtext::element_markdown()) </code></pre>
+
+      <div class="text-center">
+        <img src="assets/img/data/us-senate-ggparliament.png" alt="us-senate-ggparliament" style="position:relative" class="img-cont">
+      </div>
+
+      <hr>
+
+      <h4>The birthplaces of German parlimentarians</h4>
+      <p>In most instances, you will need to link information from different tables in the database. For instance, in this case we need the parliamentarians' birthplace coordinates and their political party. These two data points are in the <em class = "text-cld-blue">Core</em> and <em class = "text-cld-blue">Political</em> tables. One easy way to link the tables is by employing <code>dplyr</code> joins.</p>
+
+      <pre><code class="r"># assign Political and Core tables to the environment
+deu_politicians &lt- dplyr::left_join(x = legislatoR::get_political(legislature = "deu"),
+                                    y = legislatoR::get_core(legislature = "deu"),
+                                    by = "pageid") #these two tables can be joined through their Wikipedia page ID
+
+head(deu_politicians) #print first couple observations</code></pre>
+      <div data-pagedtable="false">
+        <script data-pagedtable-source type="application/json">
+        {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["country"],"name":[1],"type":["chr"],"align":["left"]},{"label":["pageid"],"name":[2],"type":["chr"],"align":["left"]},{"label":["wikidataid"],"name":[3],"type":["chr"],"align":["left"]},{"label":["wikititle"],"name":[4],"type":["chr"],"align":["left"]},{"label":["name"],"name":[5],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[6],"type":["chr"],"align":["left"]},{"label":["ethnicity"],"name":[7],"type":["chr"],"align":["left"]},{"label":["religion"],"name":[8],"type":["chr"],"align":["left"]},{"label":["birth"],"name":[9],"type":["dttm"],"align":["right"]},{"label":["death"],"name":[10],"type":["dttm"],"align":["right"]},{"label":["birthplace"],"name":[11],"type":["chr"],"align":["left"]},{"label":["deathplace"],"name":[12],"type":["chr"],"align":["left"]}],"data":[{"1":"DEU","2":"2657","3":"Q2492","4":"Konrad_Adenauer","5":"Konrad Adenauer","6":"male","7":"white","8":"catholicism","9":"1876-01-05","10":"1967-04-19","11":"50.94222,6.95778","12":"50.6595,7.21282","_rn_":"1"},{"1":"DEU","2":"171955","3":"Q100613","4":"Willi_Agatz","5":"Willi Agatz","6":"male","7":"NA","8":"NA","9":"1904-01-01","10":"1957-01-01","11":"51.45083,7.01306","12":"52.51667,13.38333","_rn_":"2"},{"1":"DEU","2":"171957","3":"Q360721","4":"Adolf_Ahrens_(Kapitän)","5":"Adolf Ahrens","6":"male","7":"NA","8":"protestantism evangelical","9":"1879-09-17","10":"1957-01-21","11":"53.5364,8.60056","12":"53.07694,8.80889","_rn_":"3"},{"1":"DEU","2":"171967","3":"Q1382213","4":"Johannes_Albers","5":"Johannes Albers","6":"male","7":"NA","8":"catholicism","9":"1890-03-08","10":"1963-03-08","11":"51.2,6.43333","12":"50.94222,6.95778","_rn_":"4"},{"1":"DEU","2":"172061","3":"Q1277445","4":"Luise_Albertz","5":"Luise Albertz","6":"female","7":"NA","8":"NA","9":"1901-06-22","10":"1979-02-01","11":"51.43222,6.76111","12":"51.55,6.85","_rn_":"5"},{"1":"DEU","2":"172064","3":"Q1394531","4":"Lisa_Albrecht","5":"Lisa Albrecht","6":"female","7":"NA","8":"NA","9":"1896-05-27","10":"1958-05-16","11":"53.55,10","12":"52.51667,13.38333","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+        </script>
+      </div>
+
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Since the CLD is a relational database. All tables can be joined through the Core with one of the join keys.</strong> You can see the specific variable for the join in the stucture diagram.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <hr>
+
+      <p>The <code>deu_politicians</code> data frame contains all the information from the two tables. We can use these data to extract the latitudes and longitudes of the legislators' birthplace for a map.</p>
+      <pre><code class="r"># extract birthplace latitudes and longitudes with regular expressions
+deu_birthplace_map_df &lt- deu_politicians %>%
+  dplyr::distinct(wikidataid, .keep_all = T) %>% # keep unique entries of legislators
+  dplyr::mutate(lat = stringr::str_extract(birthplace, "[-[:digit:]]{1,4}\\.[:digit:]+") %>% as.numeric(),
+                lon = stringr::str_extract(birthplace, "[-[:digit:]]{1,4}\\.[:digit:]+$") %>% as.numeric())
+
+# define German boundaries
+lat1 &lt- 47; lat2 &lt- 55.5 ; lon1 &lt- 5.5; lon2 &lt- 15.5
+
+germany_sf &lt- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf", country = "Germany") #get spatial encodings for Germany
+
+ggplot(germany_sf) +
+  geom_sf(size = 1) +
+  geom_point(data = deu_birthplace_map_df, aes(x = lon, y = lat), size = .25,
+             shape = 20, color = "#cc0065", alpha = 0.5) +
+  theme_bw() +
+  facet_wrap(~party) +
+  coord_sf(xlim = c(lon1, lon2), ylim = c(lat1, lat2), expand = FALSE) +
+  labs(title = "&ltb>Birthplace of Bundestag members&ltb>")+
+  theme(plot.margin=grid::unit(c(0,0,0,0), "mm"),
+        axis.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.position = "none", text = element_text(size=10),
+        panel.grid.minor.y =  element_blank(),
+        strip.background = element_rect(fill="white"),
+        strip.text.x = element_text(color = "darkblue", face = "bold"),
+        plot.title = ggtext::element_markdown(family = "Source Sans Pro"))</code></pre>
 
 
-    </div>
-    <div id="Structure" class="tabcontent">
-      <h3>Structure</h3>
-      <p>The CLD comes as a relational database. This means that all tables can be joined with the Core table via one of two keys - the <span style = "color:#cc0065">Wikipedia page ID</span> or the <span style = "color:#cc0065">Wikidata ID</span>. These keys uniquely identify individual politicians. The figure below illustrates this structure and the CLD's content.</p>
-      <p dir="auto">For each legislature, the CLD holds nine tables:</p>
-      <ol dir="auto">
-        <li><em class="text-cld-blue">Core</em> (sociodemographic data)</li>
-        <li><em class="text-cld-blue">Political</em> (political data)</li>
-        <li><em class="text-cld-blue">History</em> (full revision records of individual Wikipedia biographies)</li>
-        <li><em class="text-cld-blue">Traffic</em> (daily user traffic on individual Wikipedia biographies starting from July 2007)</li>
-        <li><em class="text-cld-blue">Social</em> (social media handles and personal website URLs)</li>
-        <li><em class="text-cld-blue">Portraits</em> (URLs to portraits)</li>
-        <li><em class="text-cld-blue">Offices</em> (public offices)</li>
-        <li><em class="text-cld-blue">Professions</em> (professions)</li>
-        <li><em class="text-cld-blue">IDs</em> (identifiers linking politicians to other files, databases, or websites)</li>
-      </ol>
-      <div class="row-central">
-        <div class="col-sm-6">
-          <object data="assets/img/data-structure.svg" style="position:relative;margin-left:2rem;margin-right:2rem;height:100%; width:100%"> </object>
+        <div class="text-center">
+          <img src="assets/img/data/germany_sf.png" alt="bundestag-birth-map" style="position:relative" class="img-cont">
         </div>
-        <div class="col-sm-6 text-dark" >
-
-          <p dir="auto">The tables contain the following variables (see respective R help files for further details):</p>
-          <ul dir="auto">
-            <li><em>Core</em>: Country, Wikipedia page ID, Wikidata ID, Wikipedia Title, full name, sex, ethnicity, religion, date of birth and death, place of birth and death.</li>
-            <li><em>Political</em>: Wikipedia page ID, legislative session, party affiliation, lower constituency, upper constituency, constituency ID, start and end date of legislative session, period of service, majority status, leader positions.</li>
-            <li><em>History</em>: Wikipedia page ID, Wikipedia revision and previous revision ID, editor name/IP and ID, revision date and time, revision size, revision comment.</li>
-            <li><em>Traffic</em>: Wikipedia page ID, date, user traffic.</li>
-            <li><em>Social</em>: Wikidata ID, Twitter handle, Facebook handle, Youtube ID, Google Plus ID, Instagram handle, LinkedIn ID, personal website URL.</li>
-            <li><em>Portraits</em>: Wikipedia page ID, Wikipedia portrait URL.</li>
-            <li><em>Offices</em>: Wikidata ID, a range of offices such as attorney general, chief justice, mayor, party chair, secretary of state, etc.</li>
-            <li><em>Professions</em>: Wikidata ID, a range of professions such as accountant, farmer, historian, judge, mechanic, police officer, salesperson, teacher, etc.</li>
-            <li><em>IDs</em>: Wikidata ID, IDs for integration with various political science datsets as well as a range of other IDs such as parliamentary website IDs, Library of Congress or German National Library IDs, Notable Names Database or Project Vote Smart IDs, etc.</li>
-          </ul>
-          <p dir="auto">Note that for some legislatures or legislative periods, tables may only hold information for a subset of politicians or variables. In successive versions of the CLD, we fill some of these gaps.</p>
-        </div>
-
-
-      </div>
-    </div>
-
-    <div id="LegislatoR" class="tabcontent">
-      <h3>LegislatoR</h3>
-      <p><b style="color:#cc0065">legislatoR</b> is a package for the software environment R that facilitates access to the Comparative Legislators Database (CLD). The package is available through CRAN and GitHub. To install the package from CRAN, type:</p>
-      <pre><code class="r">install.packages("legislatoR")</code></pre>
-      <p> You can also download the development version directly from Github:</p>
-      <pre><code class="r"># install.packages("devtools")
-devtools::install_github("saschagobel/legislatoR")</code></pre>
-<hr>
-      <h3>Usage</h3>
-      <p>A working Internet connection is required to access the <b style="color:#cc0065">CLD</b> in R. This is because the data are stored online and not installed together with the package. The package provides table-specific function calls. These functions are named after the respective table and preceded by <code>get_</code>. To fetch the Core table, use the <code>get_core()</code> function, for the Political table, use the <code>get_political()</code> function. Call the package help file via <code>?legislatoR()</code> to get an overview of all function calls. Tables are legislature-specific, so a three-letter country code must be passed as an argument to the function. Here is a breakdown of all country codes. You can also call the <code>cld_content()</code> function to get an overview of the CLD's scope and valid country codes.</p>
-      <div class="legislator-table table-hover text-center">
-        <table>
-  <thead>
-  <tr>
-  <th>Legislature</th>
-  <th align="center">Code</th>
-  <th>Legislature</th>
-  <th align="center">Code</th>
-  <th>Legislature</th>
-  <th align="center">Code</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td>Austrian Nationalrat</td>
-  <td align="center"><code>aut</code></td>
-  <td>German Bundestag</td>
-  <td align="center"><code>deu</code></td>
-  <td>UK House of Commons</td>
-  <td align="center"><code>gbr</code></td>
-  </tr>
-  <tr>
-  <td>Canadian House of Commons</td>
-  <td align="center"><code>can</code></td>
-  <td>Irish Dail</td>
-  <td align="center"><code>irl</code></td>
-  <td>United States Congress</td>
-  <td align="center"><code>usa_house</code>/<code>usa_senate</code></td>
-  </tr>
-  <tr>
-  <td>Czech Poslanecka Snemovna</td>
-  <td align="center"><code>cze</code></td>
-  <td>Scottish Parliament</td>
-  <td align="center"><code>sco</code></td>
-  <td></td>
-  <td align="center"></td>
-  </tr>
-  <tr>
-  <td>French Assemblée</td>
-  <td align="center"><code>fra</code></td>
-  <td>Spanish Congreso</td>
-  <td align="center"><code>esp</code></td>
-  <td></td>
-  <td align="center"></td>
-  </tr>
-  </tbody>
-  </table>
-</div>
-      </div>
-
-      <div id="Tutorial" class="tabcontent">
-        <h3>Tutorial</h3>
-        <p>Use case with CLD and <code>ggplot</code>.</p>
-      </div>
-    </section>
 
 
 
-    <!-- Footer-->
-    <footer class="footer py-4">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4 text-lg-start">Copyright &copy; CLD 2021</div>
-          <div class="col-lg-4 my-3 my-lg-0">
-            <a class="btn btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-social mx-2" href="#!"><i class="fab fa-github"></i></a>
-          </div>
-          <div class="col-lg-4 text-lg-end">
-            <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>
-                      <strong>Client:</strong>
-                      Threads
-                    </li>
-                    <li>
-                      <strong>Category:</strong>
-                      Illustration
-                    </li>
-                  </ul>
-                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                    <i class="fas fa-times me-1"></i>
-                    Close Project
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 2 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>
-                      <strong>Client:</strong>
-                      Explore
-                    </li>
-                    <li>
-                      <strong>Category:</strong>
-                      Graphic Design
-                    </li>
-                  </ul>
-                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                    <i class="fas fa-times me-1"></i>
-                    Close Project
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 3 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>
-                      <strong>Client:</strong>
-                      Finish
-                    </li>
-                    <li>
-                      <strong>Category:</strong>
-                      Identity
-                    </li>
-                  </ul>
-                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                    <i class="fas fa-times me-1"></i>
-                    Close Project
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 4 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>
-                      <strong>Client:</strong>
-                      Lines
-                    </li>
-                    <li>
-                      <strong>Category:</strong>
-                      Branding
-                    </li>
-                  </ul>
-                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                    <i class="fas fa-times me-1"></i>
-                    Close Project
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 5 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>
-                      <strong>Client:</strong>
-                      Southwest
-                    </li>
-                    <li>
-                      <strong>Category:</strong>
-                      Website Design
-                    </li>
-                  </ul>
-                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                    <i class="fas fa-times me-1"></i>
-                    Close Project
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Portfolio item 6 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="modal-body">
-                  <!-- Project details-->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>
-                      <strong>Client:</strong>
-                      Window
-                    </li>
-                    <li>
-                      <strong>Category:</strong>
-                      Photography
-                    </li>
-                  </ul>
-                  <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                    <i class="fas fa-times me-1"></i>
-                    Close Project
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <script src="js/clipboard.min.js"></script>
-    <
-    <script>
-    function openPage(pageName,elmnt,color) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablink");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-      }
-      document.getElementById(pageName).style.display = "block";
-      elmnt.style.backgroundColor = color;
-    }
+<!--
+      <table style="font-family: -apple-system, 'Source Sans Pro', Roboto, BlinkMacSystemFont, 'Segoe UI', , Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: none; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;">
 
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-  </script>
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-  <!-- * *                               SB Forms JS                               * *-->
-  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-</body>
-</html>
+        <thead style="border-top-style: none; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #334422; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+          <tr>
+            <th style="color: #333333; background-color: #FFFFFF; font-size: 12px; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left; color: #A9A9A9; font-family: &#39;Source Sans Pro&#39;; text-transform: uppercase;" scope="col"></th>
+            <th style="color: #333333; background-color: #FFFFFF; font-size: 12px; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; color: #000000; font-family: &#39;Source Sans Pro&#39;; text-transform: uppercase; text-align: right; vertical-align: middle; font-weight: bold;" scope="col">Wiki visits</th>
+          </tr>
+        </thead>
+        <tbody style="border-top-style: none; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #FFFFFF;">
+          <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Nicolas_Sarkozy_in_2010.jpg" style="height:45px;"></td>
+            <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>11,804,242</div>
+              <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>Nicolas Sarkozy</span></div></td></tr>
+              <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Chirac_Lula_ABr62198_%28without_light%29.jpeg/600px-Chirac_Lula_ABr62198_%28without_light%29.jpeg" style="height:45px;"></td>
+                <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>10,249,607</div>
+                  <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>Jacques Chirac</span></div></td></tr>
+                  <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Francois_Hollande_2015.jpeg/600px-Francois_Hollande_2015.jpeg" style="height:45px;"></td>
+                    <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>9,222,900</div>
+                      <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>François Hollande</span></div></td></tr>
+                      <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Marine_Le_Pen_%282017-03-24%29_01_cropped.jpg/600px-Marine_Le_Pen_%282017-03-24%29_01_cropped.jpg" style="height:45px;"></td>
+                        <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>7,079,628</div>
+                          <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>Marine Le Pen</span></div></td></tr>
+                          <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Meeting_M%C3%A9lenchon_Toulouse_-_2017-04-16_-_Jean-Luc_M%C3%A9lenchon_-_41_%28cropped_2%29.jpg/600px-Meeting_M%C3%A9lenchon_Toulouse_-_2017-04-16_-_Jean-Luc_M%C3%A9lenchon_-_41_%28cropped_2%29.jpg" style="height:45px;"></td>
+                            <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>7,030,545</div>
+                              <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>Jean-Luc Mélenchon</span></div></td></tr>
+                              <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Val%C3%A9ry_Giscard_d%E2%80%99Estaing_1978%283%29.jpg/600px-Val%C3%A9ry_Giscard_d%E2%80%99Estaing_1978%283%29.jpg" style="height:45px;"></td>
+                                <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>6,668,778</div>
+                                  <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>Valéry Giscard d'Estaing</span></div></td></tr>
+                                  <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Mitterrand_1_avril_1981.jpg/600px-Mitterrand_1_avril_1981.jpg" style="height:45px;"></td>
+                                    <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>6,597,671</div>
+                                      <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>François Mitterrand</span></div></td></tr>
+                                      <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Valls_Schaefer_Munich_Economic_Summit_2015_%28cropped%29.JPG/600px-Valls_Schaefer_Munich_Economic_Summit_2015_%28cropped%29.JPG" style="height:45px;"></td>
+                                        <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>5,959,150</div>
+                                          <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>Manuel Valls</span></div></td></tr>
+                                          <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fran%C3%A7ois_Fillon_2010.jpg/600px-Fran%C3%A7ois_Fillon_2010.jpg" style="height:45px;"></td>
+                                            <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>5,548,687</div>
+                                              <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>François Fillon</span></div></td></tr>
+                                              <tr><td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Strauss-Kahn%2C_Dominique_%28official_portrait_2008%29.jpg/600px-Strauss-Kahn%2C_Dominique_%28official_portrait_2008%29.jpg" style="height:45px;"></td>
+                                                <td style="padding-top: 7px; padding-bottom: 7px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; font-family: &#39;Source Sans Pro&#39;; font-weight: 400;"><div style='line-height:14px'><span style='font-weight:bold;font-variant:small-caps;color:#000000;font-size:14px'>5,515,042</div>
+                                                  <div style='line-height:10px'><span style ='font-weight:bold;color:#BEBEBE;font-size:10px'>Dominique Strauss-Kahn</span></div></td></tr>
+                                                </tbody>
+
+
+                                              </table>
+                                            -->
+                                        
+                                            </div>
+
+
+
+
+                                          </section>
+
+
+
+                                          <!-- Footer-->
+                                          <footer class="footer py-4">
+                                            <div class="container">
+                                              <div class="row align-items-center">
+                                                <div class="col-lg-4 text-lg-start">Copyright &copy; CLD 2021</div>
+                                                <div class="col-lg-4 my-3 my-lg-0">
+                                                  <a class="btn btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                                  <a class="btn btn-social mx-2" href="#!"><i class="fab fa-github"></i></a>
+                                                </div>
+                                                <div class="col-lg-4 text-lg-end">
+                                                  <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                                                  <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </footer>
+                                          <!-- Portfolio Modals-->
+                                          <!-- Portfolio item 1 modal popup-->
+                                          <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                                                <div class="container">
+                                                  <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                      <div class="modal-body">
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase">Project Name</h2>
+                                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                                                        <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                                        <ul class="list-inline">
+                                                          <li>
+                                                            <strong>Client:</strong>
+                                                            Threads
+                                                          </li>
+                                                          <li>
+                                                            <strong>Category:</strong>
+                                                            Illustration
+                                                          </li>
+                                                        </ul>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                          <i class="fas fa-times me-1"></i>
+                                                          Close Project
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Portfolio item 2 modal popup-->
+                                          <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                                                <div class="container">
+                                                  <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                      <div class="modal-body">
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase">Project Name</h2>
+                                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
+                                                        <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                                        <ul class="list-inline">
+                                                          <li>
+                                                            <strong>Client:</strong>
+                                                            Explore
+                                                          </li>
+                                                          <li>
+                                                            <strong>Category:</strong>
+                                                            Graphic Design
+                                                          </li>
+                                                        </ul>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                          <i class="fas fa-times me-1"></i>
+                                                          Close Project
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Portfolio item 3 modal popup-->
+                                          <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                                                <div class="container">
+                                                  <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                      <div class="modal-body">
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase">Project Name</h2>
+                                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
+                                                        <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                                        <ul class="list-inline">
+                                                          <li>
+                                                            <strong>Client:</strong>
+                                                            Finish
+                                                          </li>
+                                                          <li>
+                                                            <strong>Category:</strong>
+                                                            Identity
+                                                          </li>
+                                                        </ul>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                          <i class="fas fa-times me-1"></i>
+                                                          Close Project
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Portfolio item 4 modal popup-->
+                                          <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                                                <div class="container">
+                                                  <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                      <div class="modal-body">
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase">Project Name</h2>
+                                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
+                                                        <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                                        <ul class="list-inline">
+                                                          <li>
+                                                            <strong>Client:</strong>
+                                                            Lines
+                                                          </li>
+                                                          <li>
+                                                            <strong>Category:</strong>
+                                                            Branding
+                                                          </li>
+                                                        </ul>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                          <i class="fas fa-times me-1"></i>
+                                                          Close Project
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Portfolio item 5 modal popup-->
+                                          <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                                                <div class="container">
+                                                  <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                      <div class="modal-body">
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase">Project Name</h2>
+                                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
+                                                        <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                                        <ul class="list-inline">
+                                                          <li>
+                                                            <strong>Client:</strong>
+                                                            Southwest
+                                                          </li>
+                                                          <li>
+                                                            <strong>Category:</strong>
+                                                            Website Design
+                                                          </li>
+                                                        </ul>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                          <i class="fas fa-times me-1"></i>
+                                                          Close Project
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Portfolio item 6 modal popup-->
+                                          <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                                                <div class="container">
+                                                  <div class="row justify-content-center">
+                                                    <div class="col-lg-8">
+                                                      <div class="modal-body">
+                                                        <!-- Project details-->
+                                                        <h2 class="text-uppercase">Project Name</h2>
+                                                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                                        <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
+                                                        <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                                        <ul class="list-inline">
+                                                          <li>
+                                                            <strong>Client:</strong>
+                                                            Window
+                                                          </li>
+                                                          <li>
+                                                            <strong>Category:</strong>
+                                                            Photography
+                                                          </li>
+                                                        </ul>
+                                                        <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                                          <i class="fas fa-times me-1"></i>
+                                                          Close Project
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Bootstrap core JS-->
+                                          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+                                          <!-- Core theme JS-->
+                                          <script src="js/scripts.js"></script>
+                                          <script src="js/clipboard.min.js"></script>
+
+                                          <script>
+                                          function openPage(pageName,elmnt,color) {
+                                            var i, tabcontent, tablinks;
+                                            tabcontent = document.getElementsByClassName("tabcontent");
+                                            for (i = 0; i < tabcontent.length; i++) {
+                                              tabcontent[i].style.display = "none";
+                                            }
+                                            tablinks = document.getElementsByClassName("tablink");
+                                            for (i = 0; i < tablinks.length; i++) {
+                                              tablinks[i].style.backgroundColor = "";
+                                            }
+                                            document.getElementById(pageName).style.display = "block";
+                                            elmnt.style.backgroundColor = color;
+                                          }
+
+                                          // Get the element with id="defaultOpen" and click on it
+                                          document.getElementById("defaultOpen").click();
+                                          </script>
+                                          <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                                          <!-- * *                               SB Forms JS                               * *-->
+                                          <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+                                          <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+                                          <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+                                        </body>
+                                        </html>
